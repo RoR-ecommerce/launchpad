@@ -17,6 +17,7 @@ group :test do
   gem 'database_cleaner',   '~> 0.9.1'
   gem 'capybara',           '~> 2.0.2'
   gem 'poltergeist',        '~> 1.1.0'
+  gem 'ffaker',             '~> 1.15.0'
 end
 
 # Gems used only for assets and not required
