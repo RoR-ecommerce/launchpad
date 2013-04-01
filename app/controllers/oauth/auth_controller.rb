@@ -1,6 +1,13 @@
 class Oauth::AuthController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :client_does_not_exist
 
+  # TODO Security
+  # Spoofing protection to make sure that requests to create action are coming
+  # from our new action.
+  # This will prevent malicious clients from trying to spoof our internals.
+  #
+  # Could be implemented the same way as Rails CSRF protection.
+
   def new
     client = Client.where(client_id: params[:client_id]).first!
 
