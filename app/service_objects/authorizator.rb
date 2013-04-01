@@ -5,6 +5,6 @@ class Authorizator
   end
 
   def create!
-    Authorization.create!(user: @user, client: @client)
+    Authorization.where(user_id: @user, client_id: @client).first_or_create!
   end
 end
