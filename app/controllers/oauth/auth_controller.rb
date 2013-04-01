@@ -1,6 +1,4 @@
 class Oauth::AuthController < ApplicationController
-  before_filter :spoofing_check, only: :create
-
   rescue_from ActiveRecord::RecordNotFound, with: :client_does_not_exist
 
   def new
@@ -11,7 +9,7 @@ class Oauth::AuthController < ApplicationController
   end
 
   def create
-    client       = Client.find(params[:client_id])
+    client       = Client.find_by_client_id(params[:client_id])
     authorizator = Authorizator.new(current_user, client).create!
     redirector   = UriRedirector.new(client.redirect_uri, params[:redirect_uri])
 
@@ -20,11 +18,6 @@ class Oauth::AuthController < ApplicationController
   end
 
   private
-
-  def spoofing_check
-    redirect_to root_path unless
-      SpoofingMatcher.new(request.referrer, request.url).match?
-  end
 
   def client_does_not_exist
     redirect_to root_path
