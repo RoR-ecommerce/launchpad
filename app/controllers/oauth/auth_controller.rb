@@ -21,6 +21,9 @@ class Oauth::AuthController < ApplicationController
     authorizator = Authorizator.new(current_user, client).create!
     redirector   = UriRedirector.new(client.redirect_uri, params[:redirect_uri])
 
+    # FIXME Bug
+    # redirect_to does not understand additional paramethers when the first one
+    # is string, so we need to create full string manually.
     redirect_to(redirector.redirect_uri,
       state: params[:state], code: authorizator.code)
   end
