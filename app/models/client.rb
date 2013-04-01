@@ -1,8 +1,16 @@
 class Client < ActiveRecord::Base
+  has_many :authorizations, inverse_of: :client, dependent: :destroy
+
   validates :name, :client_id, :client_secret, :uri, :redirect_uri,
     presence: true
 
+  validates :client_id, :client_secret, :uri, :redirect_uri,
+    uniqueness: true
+
   before_validation :set_client_id, :set_client_secret, on: :create
+
+  scope :secret, -> (client_id, client_secret) \
+    { where(client_id: client_id, client_secret: client_secret) }
 
   private
 
