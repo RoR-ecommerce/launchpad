@@ -5,7 +5,8 @@ class Client < ActiveRecord::Base
   validates :client_id, :client_secret, :uri, :redirect_uri,
     uniqueness: true
 
-  before_validation :set_client_id, :set_client_secret, on: :create
+  before_validation :set_client_id, :set_client_secret, :set_access_token,
+    on: :create
 
   scope :with_secret, -> (client_id, client_secret) \
     { where(client_id: client_id, client_secret: client_secret) }
