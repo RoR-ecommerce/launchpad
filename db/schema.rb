@@ -11,32 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401005342) do
-
-  create_table "authorizations", :force => true do |t|
-    t.integer  "user_id",         :null => false
-    t.integer  "client_id",       :null => false
-    t.string   "code",            :null => false
-    t.string   "access_token",    :null => false
-    t.datetime "code_expires_at", :null => false
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  add_index "authorizations", ["access_token"], :name => "index_authorizations_on_access_token", :unique => true
-  add_index "authorizations", ["code"], :name => "index_authorizations_on_code", :unique => true
-  add_index "authorizations", ["user_id", "client_id"], :name => "index_authorizations_on_user_id_and_client_id", :unique => true
+ActiveRecord::Schema.define(:version => 20130331184238) do
 
   create_table "clients", :force => true do |t|
     t.string   "name",          :null => false
     t.string   "client_id",     :null => false
     t.string   "client_secret", :null => false
+    t.string   "access_token",  :null => false
     t.string   "uri",           :null => false
     t.string   "redirect_uri",  :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
+  add_index "clients", ["access_token"], :name => "index_clients_on_access_token", :unique => true
   add_index "clients", ["client_id"], :name => "index_clients_on_client_id", :unique => true
   add_index "clients", ["client_secret"], :name => "index_clients_on_client_secret", :unique => true
 

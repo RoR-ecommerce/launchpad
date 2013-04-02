@@ -52,6 +52,10 @@ describe Client do
       expect(client.client_secret).to eq('b')
     end
 
+    it '#access_token' do
+      pending
+    end
+
     it 'does not set required attributes on update' do
       client = FactoryGirl.create(:client)
       client_id = client.client_id
@@ -63,8 +67,22 @@ describe Client do
     end
   end
 
-  describe '#find_secretly' do
+  describe '#find_one!' do
     it 'finds client by #client_id and #client_secret' do
+      pending
+    end
+
+    it 'raises RecordNotFound if client is not found' do
+      pending
+    end
+  end
+
+  describe '#find_one_with_secret!' do
+    it 'finds client by #client_id and #client_secret' do
+      pending
+    end
+
+    it 'raises RecordNotFound if client is not found' do
       pending
     end
   end
