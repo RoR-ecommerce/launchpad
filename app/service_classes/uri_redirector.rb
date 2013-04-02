@@ -1,20 +1,24 @@
 class UriRedirector
-  def initialize(our_uri, their_uri)
-    @our_uri   = UriMatcher.new(our_uri)
-    @their_uri = UriMatcher.new(their_uri)
+  attr_reader :safe_uri, :unsafe_uri
+
+  def initialize(safe_uri, unsafe_uri)
+    @safe_uri   = UriMatcher.new(safe_uri)
+    @unsafe_uri = UriMatcher.new(unsafe_uri)
   end
 
-  def redirect_uri
-    if @their_uri
-      match? ? @their_uri.redirect_uri : @our_uri.redirect_uri
-    else
-      @our_uri.redirect_uri
-    end
+  def uri(**fragments)
+    UriBuilder.new(base_uri, **fragments).build
   end
 
-  private
+  def base_uri
+    return safe_uri.uri unless unsafe_uri.uri
+
+    match? ? unsafe_uri.uri : safe_uri.uri
+  end
+
+  protected
 
   def match?
-    @our_uri.eql?(@their_uri)
+    safe_uri.eql?(unsafe_uri)
   end
 end
