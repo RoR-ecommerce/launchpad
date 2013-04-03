@@ -1,6 +1,7 @@
 class Oauth::UserController < ApplicationController
   def user
-    if auth = Authorization.find_by_token(params[:access_token])
+    # Why OmniAuth sends bearer_token instead of access token?
+    if auth = Authorization.find_by_token(params[:bearer_token])
       render json: auth.user
     else
       render json: { message: 'Unauthorized Request' }, status: :unauthorized
