@@ -3,7 +3,8 @@ class Oauth::AuthController < ApplicationController
 
   def auth
     client     = Client.find!(params[:client_id])
-    auth       = Authorization.create!(user: current_user, client: client)
+    # Move into service?
+    auth       = Authorization.where(user_id: current_user.id, client_id: client.id).first_or_create!
     redirector = UriRedirector.new(client.redirect_uri, params[:redirect_uri])
 
     redirect_to redirector.uri \
