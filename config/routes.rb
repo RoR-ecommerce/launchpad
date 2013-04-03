@@ -11,6 +11,8 @@ Launchpad::Application.routes.draw do
 
   root to: 'home#index'
 
-  match '/oauth/auth'  => 'oauth/auth#auth',    via: :get
-  match '/oauth/token' => 'oauth/token#create', via: :post
+  get  '/oauth/auth'  => 'oauth/auth#auth'
+  post '/oauth/token' => 'oauth/token#create'
+
+  get  'oauth/user'   => 'oauth/user#user'
 end

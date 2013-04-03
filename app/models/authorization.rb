@@ -1,25 +1,26 @@
 class Authorization < ActiveRecord::Base
-  CODE_EXPIRATION_INTERVAL = 2.minutes
-
   belongs_to :user
   belongs_to :client
 
-  validates :client_id, :user_id, :access_token, :code, :code_expires_at,
+  validates :user_id, :client_id, :access_token, :code,
     presence: true
 
-  validates :client_id, uniqueness: { scope: :user_id }
-  validates :access_token, :code, uniqueness: true
+  validates :client_id,
+    uniqueness: { scope: :user_id }
 
-  before_validation :set_access_token, :set_code, :set_code_expires_at,
+  validates :access_token, :code,
+    uniqueness: true
+
+  before_validation :set_access_token, :set_code,
     on: :create
 
-  scope :with_code, -> (code) { where(code: code) }
-  scope :not_expired, -> { where('code_expires_at >= ?', Time.current) }
-
   class << self
-    def find_secretly(code, client_id, client_secret)
-      joins(:client).not_expired.with_code(code).
-        merge(Client.secret(client_id, client_secret)).last
+    def find_by_code(code)
+      where(code: code).first
+    end
+
+    def find_by_token(token)
+      where(access_token: token).first
     end
   end
 
@@ -30,10 +31,6 @@ class Authorization < ActiveRecord::Base
   end
 
   def set_code
-    self.code = SecureRandom.hex(10)
-  end
-
-  def set_code_expires_at
-    self.code_expires_at = CODE_EXPIRATION_INTERVAL.from_now
+    self.code = SecureRandom.hex(20)
   end
 end

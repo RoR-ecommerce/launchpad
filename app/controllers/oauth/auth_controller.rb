@@ -1,10 +1,12 @@
 class Oauth::AuthController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :client_does_not_exist
+  before_filter :authenticate_user!
 
   def auth
-    client     = Client.find_one!(params[:client_id])
+    client     = Client.find!(params[:client_id])
+    auth       = Authorization.create!(user: current_user, client: client)
     redirector = UriRedirector.new(client.redirect_uri, params[:redirect_uri])
 
-    redirect_to(redirector.uri(state: params[:state]))
+    redirect_to redirector.uri \
+      state: params[:state], code: auth.code, response_type: 'code'
   end
 end
