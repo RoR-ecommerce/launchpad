@@ -1,37 +1,50 @@
 require 'spec_helper'
 
 describe Client do
-  describe '::validations' do
-    it 'with no #name' do
+  it 'is valid' do
+    expect(FactoryGirl.build(:client)).to be_valid
+  end
+
+  describe 'validates' do
+    it 'presence of #name' do
       expect(Client.new).to have(1).error_on(:name)
     end
 
-    it 'with no #uri' do
+    it 'presence of #uri' do
       expect(Client.new).to have(1).error_on(:uri)
     end
 
-    it 'with no #redirect_uri' do
+    it 'presence of #redirect_uri' do
       expect(Client.new).to have(1).error_on(:redirect_uri)
     end
 
-    it 'with duplicate #client_id' do
-      pending
-    end
+    describe 'uniqueness' do
+      before(:each) do
+        SecureRandom.stub(:hex).and_return('abc')
+        FactoryGirl.create(:client)
+      end
 
-    it 'with duplicate #client_secret' do
-      pending
-    end
+      let(:client) do
+        client = Client.new
+        client.valid?
+        client
+      end
 
-    it 'with duplicate #uri' do
-      pending
-    end
+      it 'of #client_id' do
+        expect(client).to have(1).error_on(:client_id)
+      end
 
-    it 'with duplicate #redirect_uri' do
-      pending
-    end
+      it 'of #client_secret' do
+        expect(client).to have(1).error_on(:client_secret)
+      end
 
-    it 'with valid attributes' do
-      expect(FactoryGirl.build(:client)).to be_valid
+      it 'of #uri' do
+        expect(client).to have(1).error_on(:uri)
+      end
+
+      it 'of #redirect_uri' do
+        expect(client).to have(1).error_on(:redirect_uri)
+      end
     end
   end
 
@@ -52,7 +65,7 @@ describe Client do
   end
 
   describe 'on update' do
-    it 'does not set #client_id and #client_secret' do
+    it 'does not change #client_id and #client_secret' do
       client = FactoryGirl.create(:client)
       client_id = client.client_id
       client_secret = client.client_secret
@@ -63,23 +76,14 @@ describe Client do
     end
   end
 
-  describe '::find!' do
+  describe '::authorize!' do
     it 'finds client by #client_id' do
-      pending
+      client = FactoryGirl.create(:client)
+      expect(Client.authorize!(client.client_id).id).to eq(client.id)
     end
 
     it 'raises RecordNotFound if client is not found' do
-      pending
-    end
-  end
-
-  describe '::secure_find!' do
-    it 'finds client by #client_id and #client_secret' do
-      pending
-    end
-
-    it 'raises RecordNotFound if client is not found' do
-      pending
+      expect{ Client.authorize!('foo') }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

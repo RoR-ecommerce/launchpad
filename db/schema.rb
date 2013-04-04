@@ -11,19 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403055057) do
+ActiveRecord::Schema.define(:version => 20130403192450) do
 
-  create_table "authorizations", :force => true do |t|
-    t.integer  "user_id",      :null => false
-    t.integer  "client_id",    :null => false
-    t.string   "access_token", :null => false
-    t.string   "code",         :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+  create_table "authorization_codes", :force => true do |t|
+    t.string   "client_id"
+    t.string   "client_secret"
+    t.string   "code"
+    t.integer  "user_id"
+    t.datetime "code_expires_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "access_token",    :null => false
   end
 
-  add_index "authorizations", ["access_token"], :name => "index_authorizations_on_access_token", :unique => true
-  add_index "authorizations", ["code"], :name => "index_authorizations_on_code", :unique => true
+  add_index "authorization_codes", ["client_id", "client_secret"], :name => "index_authorization_codes_on_client_id_and_client_secret"
+  add_index "authorization_codes", ["code"], :name => "index_authorization_codes_on_code", :unique => true
 
   create_table "clients", :force => true do |t|
     t.string   "name",          :null => false
@@ -46,8 +48,10 @@ ActiveRecord::Schema.define(:version => 20130403055057) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "access_token",                           :null => false
   end
 
+  add_index "users", ["access_token"], :name => "index_users_on_access_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

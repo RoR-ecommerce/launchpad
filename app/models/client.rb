@@ -1,6 +1,4 @@
 class Client < ActiveRecord::Base
-  has_many :authorizations, inverse_of: :client, dependent: :delete_all
-
   validates :name, :client_id, :client_secret, :uri, :redirect_uri,
     presence: true
 
@@ -10,16 +8,9 @@ class Client < ActiveRecord::Base
   before_validation :set_client_id, :set_client_secret,
     on: :create
 
-  scope :with_secret, -> (client_id, client_secret) \
-    { where(client_id: client_id, client_secret: client_secret) }
-
   class << self
-    def find!(client_id)
+    def authorize!(client_id)
       where(client_id: client_id).first!
-    end
-
-    def secure_find!(client_id, client_secret)
-      with_secret(client_id, client_secret).first!
     end
   end
 
