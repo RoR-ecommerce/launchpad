@@ -67,5 +67,8 @@ module Launchpad
     config.generators do |g|
       g.fixture_replacement :factory_girl
     end
+
+    require 'json_parser_exceptions'
+    config.middleware.swap ActionDispatch::ParamsParser, JsonParserExceptions
   end
 end
