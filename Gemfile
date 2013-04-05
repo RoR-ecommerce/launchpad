@@ -7,6 +7,7 @@ gem 'strong_parameters',    '0.2.0'
 gem 'pg',                   '0.14.1'
 
 gem 'devise',               '2.2.3'
+gem 'secure_headers',       '0.3.0'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.13.0'
