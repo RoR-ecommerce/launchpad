@@ -8,12 +8,12 @@ describe AuthorizationCode do
   end
 
   describe 'validates' do
-    it 'presence of #app_id' do
-      expect(AuthorizationCode.new).to have(1).error_on(:app_id)
+    it 'presence of #client_id' do
+      expect(AuthorizationCode.new).to have(1).error_on(:client_id)
     end
 
-    it 'presence of #app_secret' do
-      expect(AuthorizationCode.new).to have(1).error_on(:app_secret)
+    it 'presence of #client_secret' do
+      expect(AuthorizationCode.new).to have(1).error_on(:client_secret)
     end
 
     it 'presence of #user_id' do
@@ -73,8 +73,8 @@ describe AuthorizationCode do
     it '::by_client_and_code' do
       auth_code = FactoryGirl.create(:authorization_code)
       expect(AuthorizationCode.by_client_and_code(
-        auth_code.app_id,
-        auth_code.app_secret,
+        auth_code.client_id,
+        auth_code.client_secret,
         auth_code.code).first.id).to eq(auth_code.id)
     end
   end
@@ -83,8 +83,8 @@ describe AuthorizationCode do
     it '::authorize' do
       auth_code = FactoryGirl.create(:authorization_code)
       expect(AuthorizationCode.authorize(
-        auth_code.app_id,
-        auth_code.app_secret,
+        auth_code.client_id,
+        auth_code.client_secret,
         auth_code.code).id).to eq(auth_code.id)
     end
 

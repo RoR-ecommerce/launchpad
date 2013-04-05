@@ -1,26 +1,26 @@
 class Client < ActiveRecord::Base
-  validates :name, :app_id, :app_secret, :uri, :redirect_uri,
+  validates :name, :client_id, :client_secret, :uri, :redirect_uri,
     presence: true
 
-  validates :app_id, :app_secret, :uri, :redirect_uri,
+  validates :client_id, :client_secret, :uri, :redirect_uri,
     uniqueness: true
 
-  before_validation :set_app_id, :set_app_secret,
+  before_validation :set_client_id, :set_client_secret,
     on: :create
 
   class << self
-    def authorize!(app_id)
-      where(app_id: app_id).first!
+    def authorize!(client_id)
+      where(client_id: client_id).first!
     end
   end
 
   private
 
-  def set_app_id
-    self.app_id = SecureRandom.hex(10)
+  def set_client_id
+    self.client_id = SecureRandom.hex(10)
   end
 
-  def set_app_secret
-    self.app_secret = SecureRandom.hex(20)
+  def set_client_secret
+    self.client_secret = SecureRandom.hex(20)
   end
 end
