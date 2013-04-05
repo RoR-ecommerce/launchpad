@@ -3,7 +3,7 @@ class Oauth::TokenController < ApplicationController
 
   def create
     auth = AuthorizationCode.authorize \
-      params[:client_id], params[:client_secret], params[:code]
+      params[:app_id], params[:app_secret], params[:code]
 
     if auth
       render json: { access_token: auth.access_token, token_type: 'bearer' }

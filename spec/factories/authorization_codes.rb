@@ -5,8 +5,8 @@ FactoryGirl.define do
 
     before(:create) do |auth_code|
       client = FactoryGirl.create(:client)
-      auth_code.client_id     = client.client_id
-      auth_code.client_secret = client.client_secret
+      auth_code.app_id     = client.app_id
+      auth_code.app_secret = client.app_secret
     end
   end
 end

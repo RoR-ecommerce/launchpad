@@ -30,12 +30,12 @@ describe Client do
         client
       end
 
-      it 'of #client_id' do
-        expect(client).to have(1).error_on(:client_id)
+      it 'of #app_id' do
+        expect(client).to have(1).error_on(:app_id)
       end
 
-      it 'of #client_secret' do
-        expect(client).to have(1).error_on(:client_secret)
+      it 'of #app_secret' do
+        expect(client).to have(1).error_on(:app_secret)
       end
 
       it 'of #uri' do
@@ -49,37 +49,37 @@ describe Client do
   end
 
   describe 'on create' do
-    it 'sets #client_id' do
+    it 'sets #app_id' do
       SecureRandom.stub(:hex).and_return('a')
       client = Client.new
       client.valid?
-      expect(client.client_id).to eq('a')
+      expect(client.app_id).to eq('a')
     end
 
-    it 'sets #client_secret' do
+    it 'sets #app_secret' do
       SecureRandom.stub(:hex).and_return('b')
       client = Client.new
       client.valid?
-      expect(client.client_secret).to eq('b')
+      expect(client.app_secret).to eq('b')
     end
   end
 
   describe 'on update' do
-    it 'does not change #client_id and #client_secret' do
+    it 'does not change #app_id and #app_secret' do
       client = FactoryGirl.create(:client)
-      client_id = client.client_id
-      client_secret = client.client_secret
+      app_id = client.app_id
+      app_secret = client.app_secret
       client.update_attributes(name: 'foo')
 
-      expect(client_id).to eq(client.client_id)
-      expect(client_secret).to eq(client.client_secret)
+      expect(app_id).to eq(client.app_id)
+      expect(app_secret).to eq(client.app_secret)
     end
   end
 
   describe '::authorize!' do
-    it 'finds client by #client_id' do
+    it 'finds client by #app_id' do
       client = FactoryGirl.create(:client)
-      expect(Client.authorize!(client.client_id).id).to eq(client.id)
+      expect(Client.authorize!(client.app_id).id).to eq(client.id)
     end
 
     it 'raises RecordNotFound if client is not found' do

@@ -3,7 +3,7 @@ class AuthorizationCode < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :client_id, :client_secret, :user_id, :access_token,
+  validates :app_id, :app_secret, :user_id, :access_token,
     presence: true
 
   validates :code,
@@ -15,12 +15,12 @@ class AuthorizationCode < ActiveRecord::Base
   scope :expired,     -> { where('code_expires_at <= ?', Time.current) }
   scope :not_expired, -> { where('code_expires_at >= ?', Time.current) }
 
-  scope :by_client_and_code, ->(client_id, client_secret, code) \
-    { where(client_id: client_id, client_secret: client_secret, code: code) }
+  scope :by_client_and_code, ->(app_id, app_secret, code) \
+    { where(app_id: app_id, app_secret: app_secret, code: code) }
 
   class << self
-    def authorize(client_id, client_secret, code)
-      not_expired.by_client_and_code(client_id, client_secret, code).first
+    def authorize(app_id, app_secret, code)
+      not_expired.by_client_and_code(app_id, app_secret, code).first
     end
 
     def cleanup!
