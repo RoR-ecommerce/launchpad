@@ -49,7 +49,7 @@ Clients using different laguanges will have to implement
 Redirect users to Launchpad
 ---------------------------
 
-1. User, in order to register and/or authorize, should be sent to Launchpad
+User, in order to register and/or authorize, should be sent to Launchpad
 authorization system
 
 ```
@@ -84,9 +84,8 @@ by third-party and the process must be aborted.__
 Obtaining `access_token`
 ------------------------
 
-All further communication to Launchpad will be available only available
-throught JSON requests, which means every request must contain the following
-headers
+All further communication to Launchpad will only be available via JSON
+requests, which means every request must contain the following headers
 
 ```
 Content-Type: application/json
@@ -112,8 +111,11 @@ __Parameters__
 Upon successful client authorization, Launchpad will respond with the following
 JSON response
 
-```
-{ "access_token":"62506be34d574da4a0d158a67253ea99","token_type":"bearer" }
+```json
+{
+  "access_token": "62506be34d574da4a0d158a67253ea99",
+  "token_type": "bearer"
+}
 ```
 
 Obtaining User Information
@@ -121,3 +123,75 @@ Obtaining User Information
 
 Unpon receiving `access_token` you are ready to obtain user information and
 other information that belongs to user on user behalf.
+
+Request for user information should be made by the following URL
+
+```
+GET https://launchpad.ufcfit.com/oauth/user
+```
+
+__Parameters__
+
+* _Required_ `access_token` received in previous step.
+
+__`access_token` as well as `client_secret` should never be sent in the
+clear__, it is designed only for server-to-server communication.
+
+Launchpad will respond with the following JSON response
+
+```json
+{
+  "id": 3,
+  "email": "example@example.com",
+  "access_token": "433cb7a3cd986949c567443c3fdc7ebc292d8fd5",
+  "created_at": "Wed, 03 Apr 2013 23:14:51 PDT -07:00",
+  "updated_at": "Wed, 03 Apr 2013 23:14:51 PDT -07:00"
+}
+```
+
+User information might contain more information as the system being developed.
+
+Errors
+======
+
+Launchpad may issue various error responses depending on situation.
+
+1. Request is made with incorrect HTTP verb or given URL does not exist
+
+```
+HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+Content-Length: 773
+```
+
+2. Internal error on Launchpad side
+
+```
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/html; charset=utf-8
+Content-Length: 14702
+```
+
+Please notify Launchpad administrators in case of such errors.
+
+3. Malformed JSON
+
+```
+HTTP/1.1 400 Bad Request
+Content-Type: application/json; charset=utf-8
+Content-Length: 32
+
+{ "message":"Error parsing JSON" }
+```
+
+4. Client cannot be authorized
+
+```
+HTTP/1.1 401 Unauthorized
+Content-Type: application/json; charset=utf-8
+Content-Length: 34
+
+{ "message":"Unauthorized Request" }
+```
+
+Please check back to this documentation for updates.
