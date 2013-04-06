@@ -48,9 +48,6 @@ Launchpad::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
 
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
-
   # Enable threaded mode
   # config.threadsafe!
 
@@ -65,7 +62,20 @@ Launchpad::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  # Disable delivery errors, bad email addresses will be ignored
+  # config.action_mailer.raise_delivery_errors = false
+
   config.action_mailer.default_url_options = { host: 'launchpad.ufcfit.com' }
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.mandrillapp.com',
+    port:                 25,
+    enable_starttls_auto: true,
+    user_name:            ENV['MANDRILL_SMTP_USERNAME'],
+    password:             ENV['MANDRILL_SMTP_PASSWORD'],
+    authentication:       'login',
+    domain:               'launchpad.ufcfit.com'
+  }
 
   config.action_controller.action_on_unpermitted_parameters = :raise
 end
