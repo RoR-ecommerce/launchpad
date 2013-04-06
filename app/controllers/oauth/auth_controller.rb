@@ -7,6 +7,6 @@ class Oauth::AuthController < ApplicationController
     redirector = UriRedirector.new(app.redirect_uri, params[:redirect_uri])
 
     redirect_to redirector.uri \
-      state: params[:state], code: auth.code, response_type: 'code'
+      code: auth.code, response_type: 'code', state: params[:state]
   end
 end
