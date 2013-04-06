@@ -7,7 +7,7 @@ class UriBuilder
   end
 
   def build
-    return uri unless query_string
+    return uri unless query_string.present?
 
     if uri =~ /\?/
       uri << "&#{query_string}"
