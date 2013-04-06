@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403192450) do
+ActiveRecord::Schema.define(:version => 20130406043625) do
+
+  create_table "apps", :force => true do |t|
+    t.string   "name",          :null => false
+    t.string   "client_id",     :null => false
+    t.string   "client_secret", :null => false
+    t.string   "uri",           :null => false
+    t.string   "redirect_uri",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "apps", ["client_id"], :name => "index_clients_on_client_id", :unique => true
+  add_index "apps", ["client_secret"], :name => "index_clients_on_client_secret", :unique => true
 
   create_table "authorization_codes", :force => true do |t|
     t.string   "client_id"
@@ -26,19 +39,6 @@ ActiveRecord::Schema.define(:version => 20130403192450) do
 
   add_index "authorization_codes", ["client_id", "client_secret"], :name => "index_authorization_codes_on_client_id_and_client_secret"
   add_index "authorization_codes", ["code"], :name => "index_authorization_codes_on_code", :unique => true
-
-  create_table "clients", :force => true do |t|
-    t.string   "name",          :null => false
-    t.string   "client_id",     :null => false
-    t.string   "client_secret", :null => false
-    t.string   "uri",           :null => false
-    t.string   "redirect_uri",  :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "clients", ["client_id"], :name => "index_clients_on_client_id", :unique => true
-  add_index "clients", ["client_secret"], :name => "index_clients_on_client_secret", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

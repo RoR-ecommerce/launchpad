@@ -1,4 +1,4 @@
-class Client < ActiveRecord::Base
+class App < ActiveRecord::Base
   validates :name, :client_id, :client_secret, :uri, :redirect_uri,
     presence: true
 

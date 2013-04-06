@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if Rails.env.development?
-  Client.create!(name: 'Tracker', uri: 'http://localhost:3000', redirect_uri: 'http://localhost:3000/oauth/callback')
+  App.create!(name: 'Tracker', uri: 'http://localhost:3000', redirect_uri: 'http://localhost:3000/oauth/callback')
 end

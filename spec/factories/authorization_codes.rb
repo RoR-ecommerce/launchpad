@@ -4,9 +4,9 @@ FactoryGirl.define do
     access_token { user.access_token }
 
     before(:create) do |auth_code|
-      client = FactoryGirl.create(:client)
-      auth_code.client_id     = client.client_id
-      auth_code.client_secret = client.client_secret
+      app = FactoryGirl.create(:app)
+      auth_code.client_id     = app.client_id
+      auth_code.client_secret = app.client_secret
     end
   end
 end

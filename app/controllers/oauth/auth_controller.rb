@@ -2,8 +2,8 @@ class Oauth::AuthController < ApplicationController
   before_filter :authenticate_user!
 
   def auth
-    client     = Client.authorize!(params[:client_id])
-    auth       = AuthorizationCreator.new(current_user, client).create!
+    app        = App.authorize!(params[:client_id])
+    auth       = AuthorizationCreator.new(current_user, app).create!
     redirector = UriRedirector.new(client.redirect_uri, params[:redirect_uri])
 
     redirect_to redirector.uri \
