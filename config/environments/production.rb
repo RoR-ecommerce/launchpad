@@ -74,7 +74,7 @@ Launchpad::Application.configure do
     user_name:            ENV['MANDRILL_SMTP_USERNAME'],
     password:             ENV['MANDRILL_SMTP_PASSWORD'],
     authentication:       'login',
-    domain:               'launchpad.ufcfit.com'
+    domain:               'ufcfit.com'
   }
 
   config.action_controller.action_on_unpermitted_parameters = :raise
