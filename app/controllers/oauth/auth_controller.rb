@@ -4,7 +4,7 @@ class Oauth::AuthController < ApplicationController
   def auth
     app        = App.authorize!(params[:client_id])
     auth       = AuthorizationCreator.new(current_user, app).create!
-    redirector = UriRedirector.new(client.redirect_uri, params[:redirect_uri])
+    redirector = UriRedirector.new(app.redirect_uri, params[:redirect_uri])
 
     redirect_to redirector.uri \
       state: params[:state], code: auth.code, response_type: 'code'
