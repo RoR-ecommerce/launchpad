@@ -1,14 +1,16 @@
 class Oauth::TokenController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  before_filter :authorize!
 
   def create
-    auth = AuthorizationCode.authorize \
-      params[:client_id], params[:client_secret], params[:code]
+    render json: { access_token: @auth.access_token, token_type: 'bearer' }
+  end
 
-    if auth
-      render json: { access_token: auth.access_token, token_type: 'bearer' }
-    else
-      render json: { message: 'Unauthorized Request' }, status: :unauthorized
-    end
+  private
+
+  def authorize!
+    @auth = AuthorizationCode.authorize \
+      params[:client_id], params[:client_secret], params[:code]
+    unauthorized! unless @auth
   end
 end
