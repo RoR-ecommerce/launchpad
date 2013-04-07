@@ -11,6 +11,8 @@ gem 'pg',                   '0.14.1'
 gem 'devise',               '2.2.3'
 gem 'secure_headers',       '0.3.0'
 
+gem 'newrelic_rpm',         '3.6.0.78'
+
 group :development, :test do
   gem 'rspec-rails',        '~> 2.13.0'
   gem 'factory_girl_rails', '~> 4.2.1'
