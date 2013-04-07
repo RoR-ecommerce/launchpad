@@ -41,7 +41,6 @@ describe 'Edit Account' do
     fill_in 'user_current_password',      with: user.password
     click_button 'Update'
 
-    visit edit_user_registration_path
     expect(page).to have_text('You updated your account successfully')
   end
 
