@@ -84,13 +84,8 @@ by third-party and the process must be aborted.__
 Obtaining `access_token`
 ------------------------
 
-All further communication to Launchpad will only be available via JSON
-requests, which means every request must contain the following headers
-
-```
-Content-Type: application/json
-Accept: application/json
-```
+For POST requests, parameters not included in the URL should be encoded as JSON
+with Content-Type of 'application/x-www-form-urlencoded'.
 
 Requests for `access_token` should be made by the following URL
 
