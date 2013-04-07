@@ -23,4 +23,15 @@ describe Users::RegistrationsController do
       }.to raise_error(ActionController::UnpermittedParameters)
     end
   end
+
+  describe 'DELETE destroy' do
+    it 'softly deletes user' do
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      sign_in(FactoryGirl.create(:user))
+
+      controller.current_user.should_receive(:soft_destroy)
+      delete :destroy, id: controller.current_user.id
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end

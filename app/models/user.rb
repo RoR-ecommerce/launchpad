@@ -10,10 +10,22 @@ class User < ActiveRecord::Base
   before_validation :set_access_token,
     on: :create
 
+  default_scope -> { where(deleted_at: nil) }
+
   class << self
     def authorize_with_token(token)
       where(access_token: token).first
     end
+  end
+
+  # Deleting user from database entirely is a bad practice, so please use this
+  # method every time you need to destroy user.
+  #
+  # This will mark user as deleted, and default scope prevent user from showing
+  # up in result sets.
+  #
+  def soft_destroy
+    update_column(:deleted_at, Time.current)
   end
 
   private

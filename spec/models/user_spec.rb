@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe User do
+  it 'default scope prevent deleted users from showing up' do
+    user = FactoryGirl.create(:user, deleted_at: Time.current)
+    expect(User.where(email: user.email).first).to be_nil
+  end
+
   it 'is valid' do
     expect(FactoryGirl.build(:user)).to be_valid
   end
@@ -57,10 +62,14 @@ describe User do
     end
   end
 
-  describe 'class methods' do
-    it '::authorize_with_token' do
-      user = FactoryGirl.create(:user)
-      expect(User.authorize_with_token(user.access_token).id).to eq(user.id)
-    end
+  it '::authorize_with_token finds user by token' do
+    user = FactoryGirl.create(:user)
+    expect(User.authorize_with_token(user.access_token).id).to eq(user.id)
+  end
+
+  it '#soft_destroy marks user as deleted' do
+    user = FactoryGirl.create(:user)
+    user.soft_destroy
+    expect(user.deleted_at).not_to be_nil
   end
 end
