@@ -9,4 +9,7 @@ class Oauth::AuthController < ApplicationController
     redirect_to redirector.uri \
       code: auth.code, response_type: 'code', state: params[:state]
   end
+
+  # TODO Error response
+  # Make error response if Client is not found, 404?
 end
