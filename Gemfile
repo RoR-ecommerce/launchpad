@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby   '2.0.0'
 
 gem 'unicorn',              '4.6.2'
 gem 'foreman',              '0.62.0'
