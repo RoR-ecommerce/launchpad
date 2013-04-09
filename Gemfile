@@ -9,6 +9,7 @@ gem 'jquery-rails',         '2.2.1'
 gem 'strong_parameters',    '0.2.0'
 
 gem 'pg',                   '0.14.1'
+gem 'postgres_ext',         '0.3.0' # won't be needed on Rails 4
 
 gem 'devise',               '2.2.3'
 gem 'secure_headers',       '0.3.0'

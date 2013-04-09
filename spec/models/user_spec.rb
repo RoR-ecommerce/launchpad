@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe User do
+  let(:uuid) { '2d931510-d99f-494a-8c67-87feb05e1594' }
+
   it 'default scope prevent deleted users from showing up' do
     user = FactoryGirl.create(:user, deleted_at: Time.current)
     expect(User.where(email: user.email).first).to be_nil
@@ -11,7 +13,7 @@ describe User do
   end
 
   describe 'validates' do
-    it 'presence #email' do
+    it 'presence of #email' do
       expect(User.new).to have(1).error_on(:email)
     end
 
@@ -29,17 +31,19 @@ describe User do
 
     it 'uniqueness of #email' do
       user = FactoryGirl.create(:user)
-      new_user = User.new(email: user.email)
-      new_user.valid?
-      expect(new_user).to have(1).error_on(:email)
+      expect(User.new(email: user.email)).to have(1).error_on(:email)
     end
 
     it 'uniqueness of #access_token' do
       SecureRandom.stub(:hex).and_return('abc')
       FactoryGirl.create(:user)
-      user = User.new
-      user.valid?
-      expect(user).to have(1).error_on(:access_token)
+      expect(User.new).to have(1).error_on(:access_token)
+    end
+
+    it 'uniqueness of #uid' do
+      SecureRandom.stub(:uuid).and_return(uuid)
+      FactoryGirl.create(:user)
+      expect(User.new).to have(1).error_on(:uid)
     end
   end
 
@@ -50,6 +54,13 @@ describe User do
       user.valid?
       expect(user.access_token).to eq('a')
     end
+
+    it 'sets #uid' do
+      SecureRandom.stub(:uuid).and_return(uuid)
+      user = User.new
+      user.valid?
+      expect(user.uid).to eq(uuid)
+    end
   end
 
   describe 'on update' do
@@ -59,6 +70,14 @@ describe User do
       user.update_attributes(email: 'foo@bar.baz')
 
       expect(access_token).to eq(user.access_token)
+    end
+
+    it 'does not change #uid' do
+      user = FactoryGirl.create(:user)
+      uid = user.uid
+      user.update_attributes(email: 'foo@bar.baz')
+
+      expect(uid).to eq(user.uid)
     end
   end
 
@@ -71,5 +90,11 @@ describe User do
     user = FactoryGirl.create(:user)
     user.soft_destroy
     expect(user.deleted_at).not_to be_nil
+  end
+
+  it '#as_json retuns limited set of attributes' do
+    user = FactoryGirl.create(:user)
+    expect(user.as_json.keys).to \
+      include('uid', 'email', 'access_token', 'created_at', 'updated_at')
   end
 end

@@ -27,9 +27,7 @@ describe AuthorizationCode do
     it 'uniqueness of #code' do
       SecureRandom.stub(:hex).and_return('abc')
       FactoryGirl.create(:authorization_code)
-      auth_code = AuthorizationCode.new
-      auth_code.valid?
-      expect(auth_code).to have(1).error_on(:code)
+      expect(AuthorizationCode.new).to have(1).error_on(:code)
     end
   end
 

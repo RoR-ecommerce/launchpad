@@ -24,26 +24,20 @@ describe App do
         FactoryGirl.create(:app)
       end
 
-      let(:app) do
-        app = App.new
-        app.valid?
-        app
-      end
-
       it 'of #client_id' do
-        expect(app).to have(1).error_on(:client_id)
+        expect(App.new).to have(1).error_on(:client_id)
       end
 
       it 'of #client_secret' do
-        expect(app).to have(1).error_on(:client_secret)
+        expect(App.new).to have(1).error_on(:client_secret)
       end
 
       it 'of #uri' do
-        expect(app).to have(1).error_on(:uri)
+        expect(App.new).to have(1).error_on(:uri)
       end
 
       it 'of #redirect_uri' do
-        expect(app).to have(1).error_on(:redirect_uri)
+        expect(App.new).to have(1).error_on(:redirect_uri)
       end
     end
   end

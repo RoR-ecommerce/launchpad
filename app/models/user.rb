@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
 
   has_many :authorization_codes, inverse_of: :user, dependent: :delete_all
 
-  validates :access_token,
-    uniqueness: true
+  validates :access_token, :uid,
+    presence: true, uniqueness: true
 
-  before_validation :set_access_token,
+  before_validation :set_access_token, :set_uid,
     on: :create
 
   default_scope -> { where(deleted_at: nil) }
@@ -28,9 +28,19 @@ class User < ActiveRecord::Base
     update_column(:deleted_at, Time.current)
   end
 
+  def as_json(options = nil)
+    super({
+      only: [ :uid, :email, :access_token, :created_at, :updated_at]
+    }.merge(options || {}))
+  end
+
   private
 
   def set_access_token
     self.access_token = SecureRandom.hex(20)
+  end
+
+  def set_uid
+    self.uid = SecureRandom.uuid
   end
 end
