@@ -68,7 +68,7 @@ module Launchpad
       g.fixture_replacement :factory_girl
     end
 
-    require 'json_parser_exceptions'
-    config.middleware.swap ActionDispatch::ParamsParser, JsonParserExceptions
+    require 'middlewares/params_parser'
+    config.middleware.swap ActionDispatch::ParamsParser, Middlewares::ParamsParser
   end
 end
