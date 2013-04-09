@@ -12,7 +12,7 @@ gem 'pg',                   '0.14.1'
 gem 'postgres_ext',         '0.3.0' # won't be needed on Rails 4
 
 gem 'devise',               '2.2.3'
-gem 'secure_headers',       '0.3.0'
+gem 'secure_headers',       '0.3.0' # might not be needed on Rails 4
 
 gem 'airbrake',             '3.1.10'
 gem 'newrelic_rpm',         '3.6.0.78'
