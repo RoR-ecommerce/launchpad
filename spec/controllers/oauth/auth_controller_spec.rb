@@ -17,12 +17,10 @@ describe Oauth::AuthController do
       expect(response).to redirect_to('http://google.com/auth?code=secret_code&response_type=code&state=secret_state')
     end
 
-    it 'returns error message if app is not found' do
-      App.should_receive(:authorize!).and_return(nil)
-
-      get :auth
-      expect(response.code).to eq('401')
-      expect(response.body).to eq({ message: 'Unauthorized Request' }.to_json)
+    it 'returns page not found if app is not found' do
+      expect {
+        get :auth
+      }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end
