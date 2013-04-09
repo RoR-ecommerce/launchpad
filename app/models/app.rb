@@ -17,7 +17,7 @@ class App < ActiveRecord::Base
   private
 
   def set_client_id
-    self.client_id = SecureRandom.hex(10)
+    self.client_id = SecureRandom.hex(20)
   end
 
   def set_client_secret
