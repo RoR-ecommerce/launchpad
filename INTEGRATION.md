@@ -81,6 +81,8 @@ Request to your application will contain the following information
 __If `state` do not match the one client issued, the request has been created
 by third-party and the process must be aborted.__
 
+Please make sure that your application authorization endpoint is using SSL.
+
 Obtaining `access_token`
 ------------------------
 
