@@ -138,9 +138,8 @@ Launchpad will respond with the following JSON response
 
 ```json
 {
-  "id": 3,
+  "uid": "a5ad3837-805b-497e-91bd-8737fa0e6bd2",
   "email": "example@example.com",
-  "access_token": "433cb7a3cd986949c567443c3fdc7ebc292d8fd5",
   "created_at": "Wed, 03 Apr 2013 23:14:51 PDT -07:00",
   "updated_at": "Wed, 03 Apr 2013 23:14:51 PDT -07:00"
 }
