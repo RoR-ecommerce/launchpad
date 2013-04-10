@@ -95,6 +95,6 @@ describe User do
   it '#as_json retuns limited set of attributes' do
     user = FactoryGirl.create(:user)
     expect(user.as_json.keys).to \
-      include('uid', 'email', 'access_token', 'created_at', 'updated_at')
+      include('uid', 'email', 'created_at', 'updated_at')
   end
 end
