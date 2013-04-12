@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412025813) do
+ActiveRecord::Schema.define(:version => 20130412032352) do
 
   create_table "apps", :force => true do |t|
     t.string   "name",          :null => false
@@ -41,17 +41,17 @@ ActiveRecord::Schema.define(:version => 20130412025813) do
   add_index "authorization_codes", ["code"], :name => "index_authorization_codes_on_code", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :null => false
+    t.string   "encrypted_password",     :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "access_token",                           :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "access_token",           :null => false
     t.datetime "deleted_at"
-    t.uuid     "uid",                                    :null => false
-    t.string   "full_name",                              :null => false
+    t.uuid     "uid",                    :null => false
+    t.string   "full_name",              :null => false
   end
 
   add_index "users", ["access_token"], :name => "index_users_on_access_token", :unique => true
