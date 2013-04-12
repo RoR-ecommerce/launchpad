@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Launchpad</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Launchpad</title>
+    <%= stylesheet_link_tag    "normalize", media: "all" %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 
-<% if user_signed_in? %>
-  Logged in as <%= current_user.email %>
-  <%= link_to 'Edit Profile', edit_user_registration_path %> |
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign up', new_user_registration_path %> |
-  <%= link_to 'Login', new_user_session_path %>
-<% end %>
+    <!--[if IE]
+    <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
+    <![endif]-->
+    <!--[if IE 8]
+    <%= stylesheet_link_tag 'ie8.css', :media => 'screen, projection'%>
+    <![endif]-->
+    <!--[if IE 7]
+    <%= stylesheet_link_tag 'ie7.css', :media => 'screen, projection' %>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
 
-<% flash.each do |name, message| %>
-  <%= content_tag :p, message, id: "flash_#{name}" %>
-<% end %>
+        <% if user_signed_in? %>
+          Logged in as <%= current_user.email %>
+          <%= link_to 'Edit Profile', edit_user_registration_path %> |
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign up', new_user_registration_path %> |
+          <%= link_to 'Login', new_user_session_path %>
+        <% end %>
 
-<%= yield %>
+        <% flash.each do |name, message| %>
+          <%= content_tag :p, message, id: "flash_#{name}" %>
+        <% end %>
 
-</body>
+        <%= yield %>
+
+      </div>
+    </div>
+  </body>
 </html>
