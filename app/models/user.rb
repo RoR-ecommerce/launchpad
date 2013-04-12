@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
 
   def as_json(options = nil)
     super({
-      only: [ :uid, :email, :created_at, :updated_at]
+      only: [ :uid, :email, :full_name, :created_at, :updated_at]
     }.merge(options || {}))
   end
 
