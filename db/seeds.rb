@@ -22,11 +22,28 @@ if Rails.env.production? && ENV['SEEDS_ENVIRONMENT'] == 'staging'
     app.uri          = 'http://tracker.rubydj.com'
     app.redirect_uri = 'https://tracker.rubydj.com/auth/ufc/callback'
   end
+
+  App.where(name: 'Store US').first_or_create! do |app|
+    app.uri          = 'http://rubydj.com'
+    app.redirect_uri = 'https://rubydj.com/auth/ufc/callback'
+  end
+
+  # TODO Store CA needs to be added.
 end
 
 if Rails.env.production? && ENV['SEEDS_ENVIRONMENT'] == 'production'
   App.where(name: 'Tracker').first_or_create! do |app|
     app.uri          = 'http://tracker.ufcfit.com'
     app.redirect_uri = 'https://tracker.ufcfit.com/auth/ufc/callback'
+  end
+
+  App.where(name: 'Store US').first_or_create! do |app|
+    app.uri          = 'http://ufcfit.com'
+    app.redirect_uri = 'https://ufcfit.com/auth/ufc/callback'
+  end
+
+  App.where(name: 'Store CA').first_or_create! do |app|
+    app.uri          = 'http://ufcfit.ca'
+    app.redirect_uri = 'https://ufcfit.ca/auth/ufc/callback'
   end
 end
