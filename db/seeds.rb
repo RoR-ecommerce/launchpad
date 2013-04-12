@@ -2,7 +2,7 @@ if Rails.env.development?
   App.create! do |app|
     app.name         = 'Tracker'
     app.uri          = 'http://localhost:3000'
-    app.redirect_uri = 'http://localhost:3000/oauth/callback'
+    app.redirect_uri = 'http://localhost:3000/auth/ufc/callback'
   end
 end
 
@@ -20,13 +20,13 @@ end
 if Rails.env.production? && ENV['SEEDS_ENVIRONMENT'] == 'staging'
   App.where(name: 'Tracker').first_or_create! do |app|
     app.uri          = 'http://tracker.rubydj.com'
-    app.redirect_uri = 'https://tracker.rubydj.com/oauth/callback'
+    app.redirect_uri = 'https://tracker.rubydj.com/auth/ufc/callback'
   end
 end
 
 if Rails.env.production? && ENV['SEEDS_ENVIRONMENT'] == 'production'
   App.where(name: 'Tracker').first_or_create! do |app|
     app.uri          = 'http://tracker.ufcfit.com'
-    app.redirect_uri = 'https://tracker.ufcfit.com/oauth/callback'
+    app.redirect_uri = 'https://tracker.ufcfit.com/auth/ufc/callback'
   end
 end
