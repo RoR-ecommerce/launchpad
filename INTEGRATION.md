@@ -2,7 +2,7 @@ Launchpad
 =========
 
 Launchpad is centralized user management system. It provides single point of
-access to user information for all UFC resources and single sing-on
+access to user information for all UFC resources and single sign-on
 functionality for users.
 
 Users act as resource owners with implicit grant of access to UFC resources.
