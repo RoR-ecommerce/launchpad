@@ -1,14 +1,31 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable
+         :rememberable
 
   has_many :authorization_codes, inverse_of: :user, dependent: :delete_all
+
+  # Since validatable module has to be disabled in order to remove password
+  # confirmation from sign up screen, almost all device validation are moved
+  # here. Please check devise source code for more information
+  # https://github.com/plataformatec/devise/blob/master/lib/devise/models/validatable.rb
 
   validates :full_name, :access_token, :uid,
     presence: true
 
+  validates :email,
+    presence:   true,
+    format:     { with: /\A[^@]+@[^@]+\z/, allow_blank: true, if: :email_changed? },
+    uniqueness: { case_sensitive: false, allow_blank: true, if: :email_changed? }
+
   validates :access_token, :uid,
     uniqueness: true
+
+  validates :password,
+    presence: { if: :password_required? },
+    length:   { minimum: 6, maximum: 128, allow_blank: true }
+
+  validates :password,
+    confirmation: { on: :update, if: :password_required? }
 
   before_validation :set_access_token, :set_uid,
     on: :create
@@ -45,5 +62,13 @@ class User < ActiveRecord::Base
 
   def set_uid
     self.uid = SecureRandom.uuid
+  end
+
+  # Checks whether a password is needed or not. For validations only.
+  # Passwords are always required if it's a new record, or if the password
+  # or confirmation are being set somewhere.
+  #
+  def password_required?
+    !persisted? || !password.nil? || !password_confirmation.nil?
   end
 end

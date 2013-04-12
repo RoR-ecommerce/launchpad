@@ -6,7 +6,6 @@ describe 'Sign Up' do
     fill_in 'Full name',                  with: 'Moses Song'
     fill_in 'Email',                      with: 'foo@bar.baz'
     fill_in 'user_password',              with: 'password'
-    fill_in 'user_password_confirmation', with: 'password'
     click_button 'Sign up'
 
     expect(page).to have_text('Welcome aboard')
@@ -47,22 +46,5 @@ describe 'Sign Up' do
     click_button 'Sign up'
 
     expect(page).to have_selector('#error_explanation', text: 'Password is too short (minimum is 6 characters)')
-  end
-
-  it 'displays error when password confirmation is missing' do
-    visit new_user_registration_path
-    fill_in 'user_password', with: 'bar'
-    click_button 'Sign up'
-
-    expect(page).to have_selector('#error_explanation', text: "Password doesn't match confirmation")
-  end
-
-  it 'displays error when password does not match confirmation' do
-    visit new_user_registration_path
-    fill_in 'user_password',              with: 'bar'
-    fill_in 'user_password_confirmation', with: 'baz'
-    click_button 'Sign up'
-
-    expect(page).to have_selector('#error_explanation', text: "Password doesn't match confirmation")
   end
 end
