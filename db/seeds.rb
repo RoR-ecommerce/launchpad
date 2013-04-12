@@ -24,7 +24,7 @@ if Rails.env.production? && ENV['SEEDS_ENVIRONMENT'] == 'staging'
   end
 end
 
-if Rails.env.production? && ENV['SEEDS_ENVIRONMENT'] != 'production'
+if Rails.env.production? && ENV['SEEDS_ENVIRONMENT'] == 'production'
   App.where(name: 'Tracker').first_or_create! do |app|
     app.uri          = 'http://tracker.ufcfit.com'
     app.redirect_uri = 'https://tracker.ufcfit.com/oauth/callback'
