@@ -13,6 +13,10 @@ describe User do
   end
 
   describe 'validates' do
+    it 'presence of #full_name' do
+      expect(User.new).to have(1).error_on(:full_name)
+    end
+
     it 'presence of #email' do
       expect(User.new).to have(1).error_on(:email)
     end

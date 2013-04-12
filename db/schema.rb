@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130409033759) do
+ActiveRecord::Schema.define(:version => 20130412025813) do
 
   create_table "apps", :force => true do |t|
     t.string   "name",          :null => false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130409033759) do
     t.string   "access_token",                           :null => false
     t.datetime "deleted_at"
     t.uuid     "uid",                                    :null => false
+    t.string   "full_name",                              :null => false
   end
 
   add_index "users", ["access_token"], :name => "index_users_on_access_token", :unique => true

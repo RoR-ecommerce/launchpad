@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
 
   has_many :authorization_codes, inverse_of: :user, dependent: :delete_all
 
+  validates :full_name, :access_token, :uid,
+    presence: true
+
   validates :access_token, :uid,
-    presence: true, uniqueness: true
+    uniqueness: true
 
   before_validation :set_access_token, :set_uid,
     on: :create
