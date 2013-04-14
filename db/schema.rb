@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412032352) do
+ActiveRecord::Schema.define(:version => 20130414225215) do
 
   create_table "apps", :force => true do |t|
     t.string   "name",          :null => false
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(:version => 20130412032352) do
 
   create_table "users", :force => true do |t|
     t.uuid     "uid",                    :null => false
-    t.string   "full_name",              :null => false
     t.string   "email",                  :null => false
     t.string   "access_token",           :null => false
     t.string   "encrypted_password",     :null => false
@@ -52,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20130412032352) do
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
     t.datetime "deleted_at"
+    t.string   "first_name",             :null => false
+    t.string   "last_name",              :null => false
   end
 
   add_index "users", ["access_token"], :name => "index_users_on_access_token", :unique => true

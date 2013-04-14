@@ -7,14 +7,24 @@ describe 'Edit Account' do
     login_as user
   end
 
-  it 'updates full name' do
+  it 'updates first name' do
     visit edit_user_registration_path
-    fill_in 'user_full_name',        with: 'Moses Song'
+    fill_in 'user_first_name',       with: 'Moses'
     fill_in 'user_current_password', with: user.password
     click_button 'Update'
 
     visit edit_user_registration_path
-    expect(page).to have_field('user_full_name', with: 'Moses Song')
+    expect(page).to have_field('user_first_name', with: 'Moses')
+  end
+
+  it 'updates last name' do
+    visit edit_user_registration_path
+    fill_in 'user_last_name',        with: 'Song'
+    fill_in 'user_current_password', with: user.password
+    click_button 'Update'
+
+    visit edit_user_registration_path
+    expect(page).to have_field('user_last_name', with: 'Song')
   end
 
   it 'updates email' do

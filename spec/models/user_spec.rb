@@ -13,8 +13,12 @@ describe User do
   end
 
   describe 'validates' do
-    it 'presence of #full_name' do
-      expect(User.new).to have(1).error_on(:full_name)
+    it 'presence of #first_name' do
+      expect(User.new).to have(1).error_on(:first_name)
+    end
+
+    it 'presence of #last_name' do
+      expect(User.new).to have(1).error_on(:last_name)
     end
 
     it 'presence of #email' do
@@ -90,6 +94,11 @@ describe User do
     expect(User.authorize_with_token(user.access_token).id).to eq(user.id)
   end
 
+  it 'makes full name out of first and last names' do
+    user = User.new(first_name: 'Moses', last_name: 'Song')
+    expect(user.full_name).to eq('Moses Song')
+  end
+
   it '#soft_destroy marks user as deleted' do
     user = FactoryGirl.create(:user)
     user.soft_destroy
@@ -99,6 +108,6 @@ describe User do
   it '#as_json retuns limited set of attributes' do
     user = FactoryGirl.create(:user)
     expect(user.as_json.keys).to \
-      include('uid', 'email', 'full_name', 'created_at', 'updated_at')
+      include('uid', 'email', 'first_name', 'last_name', 'created_at', 'updated_at')
   end
 end

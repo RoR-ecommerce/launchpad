@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # here. Please check devise source code for more information
   # https://github.com/plataformatec/devise/blob/master/lib/devise/models/validatable.rb
 
-  validates :full_name, :access_token, :uid,
+  validates :first_name, :last_name, :access_token, :uid,
     presence: true
 
   validates :email,
@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def full_name
+    @full_name ||= [ first_name, last_name ].join(' ')
+  end
+
   # Deleting user from database entirely is a bad practice, so please use this
   # method every time you need to destroy user.
   #
@@ -50,7 +54,7 @@ class User < ActiveRecord::Base
 
   def as_json(options = nil)
     super({
-      only: [ :uid, :email, :full_name, :created_at, :updated_at]
+      only: [ :uid, :email, :first_name, :last_name, :created_at, :updated_at]
     }.merge(options || {}))
   end
 
