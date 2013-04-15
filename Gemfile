@@ -3,12 +3,6 @@ ruby   '2.0.0'
 
 gem 'unicorn',              '4.6.2'
 gem 'foreman',              '0.62.0'
-gem 'dalli',                '2.6.2'
-
-# kgio gem is Unicorn dependecy, it also can speed up Memcached I/O operations,
-# it is defined here explicitly in order not to loose it incase Unicorn drop
-# this dependency in the future.
-gem 'kgio',                 '2.8.0'
 
 gem 'rails',                '3.2.13'
 gem 'jquery-rails',         '2.2.1'
