@@ -52,6 +52,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    dalli (2.6.2)
     database_cleaner (0.9.1)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
@@ -192,12 +193,14 @@ DEPENDENCIES
   airbrake (= 3.1.10)
   capybara (~> 2.0.2)
   coffee-rails (= 3.2.2)
+  dalli (= 2.6.2)
   database_cleaner (~> 0.9.1)
   devise (= 2.2.3)
   factory_girl_rails (~> 4.2.1)
   ffaker (~> 1.15.0)
   foreman (= 0.62.0)
   jquery-rails (= 2.2.1)
+  kgio (= 2.8.0)
   newrelic_rpm (= 3.6.0.78)
   pg (= 0.14.1)
   poltergeist (~> 1.1.0)
