@@ -109,9 +109,16 @@ describe User do
     expect(user.deleted_at).not_to be_nil
   end
 
-  it '#as_json retuns limited set of attributes' do
-    user = FactoryGirl.create(:user)
-    expect(user.as_json.keys).to \
-      include('uid', 'email', 'first_name', 'last_name', 'created_at', 'updated_at')
+  describe '#as_json' do
+    it 'retuns limited set of attributes' do
+      user = FactoryGirl.build(:user)
+      expect(user.as_json.keys).to \
+        include('uid', 'email', 'first_name', 'last_name', 'created_at', 'updated_at')
+    end
+
+    it 'returns country along with attributes' do
+      user = FactoryGirl.build(:user)
+      expect(user.as_json[:country].keys).to include('alpha3')
+    end
   end
 end

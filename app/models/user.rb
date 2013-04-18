@@ -56,7 +56,8 @@ class User < ActiveRecord::Base
 
   def as_json(options = nil)
     super({
-      only: [ :uid, :email, :first_name, :last_name, :created_at, :updated_at]
+      only: [ :uid, :first_name, :last_name, :email, :created_at, :updated_at],
+      include: { country: { only: [ :alpha3 ] } }
     }.merge(options || {}))
   end
 
