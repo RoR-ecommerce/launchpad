@@ -6,11 +6,12 @@ describe 'Sign Up' do
     FactoryGirl.create(:country_us)
 
     visit new_user_registration_path
-    fill_in 'user_first_name', with: 'Moses'
-    fill_in 'user_last_name',  with: 'Song'
-    fill_in 'user_email',      with: 'foo@bar.baz'
-    select  'United States',   from: 'user_country_id'
-    fill_in 'user_password',   with: 'password'
+    fill_in 'user_first_name',      with: 'Moses'
+    fill_in 'user_last_name',       with: 'Song'
+    fill_in 'user_email',           with: 'foo@bar.baz'
+    select  'United States',        from: 'user_country_id'
+    check   'user_terms_of_service'
+    fill_in 'user_password',        with: 'password'
     click_button 'Sign up'
 
     expect(page).to have_text('Welcome aboard')
@@ -42,6 +43,13 @@ describe 'Sign Up' do
     click_button 'Sign up'
 
     expect(page).to have_selector('#error_explanation', text: "Country can't be blank")
+  end
+
+  it 'displays error when terms of service is not accepted' do
+    visit new_user_registration_path
+    click_button 'Sign up'
+
+    expect(page).to have_selector('#error_explanation', text: "Terms of service must be accepted")
   end
 
   it 'displays error when email is incorrectly formatted' do
