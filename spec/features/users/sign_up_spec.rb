@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Sign Up' do
   it 'displays home page after successful sign up' do
-    Country.expire_cache!
+    Rails.cache.clear
     FactoryGirl.create(:country_us)
 
     visit new_user_registration_path

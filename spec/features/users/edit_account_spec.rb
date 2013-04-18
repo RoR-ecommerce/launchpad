@@ -38,7 +38,7 @@ describe 'Edit Account' do
   end
 
   it 'updates country' do
-    Country.expire_cache!
+    Rails.cache.clear
     FactoryGirl.create(:country_ca)
 
     visit edit_user_registration_path

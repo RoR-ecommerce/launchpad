@@ -45,7 +45,7 @@ describe Country do
     end
 
     it '::all_sorted_and_cached returns sorted and cached collection' do
-      Country.expire_cache!
+      Rails.cache.clear
       Country.all_sorted_and_cached
       expect(Rails.cache.fetch('app/models/country#all_sorted_and_cached')).not_to be_nil
     end
