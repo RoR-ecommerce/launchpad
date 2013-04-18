@@ -37,6 +37,19 @@ describe 'Edit Account' do
     expect(page).to have_field('user_email', with: 'foo@bar.baz')
   end
 
+  it 'updates country' do
+    Country.expire_cache!
+    FactoryGirl.create(:country_ca)
+
+    visit edit_user_registration_path
+    select  'Canada',                from: 'user_country_id'
+    fill_in 'user_current_password', with: user.password
+    click_button 'Update'
+
+    visit edit_user_registration_path
+    expect(page).to have_select('user_country_id', selected: 'Canada')
+  end
+
   it 'fails to update email when new one is invalid' do
     visit edit_user_registration_path
     fill_in 'user_email',            with: 'foo'

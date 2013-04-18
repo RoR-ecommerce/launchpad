@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable
 
+  belongs_to :country
+
   has_many :authorization_codes, inverse_of: :user, dependent: :delete_all
 
   # Since validatable module has to be disabled in order to remove password
@@ -9,7 +11,7 @@ class User < ActiveRecord::Base
   # here. Please check devise source code for more information
   # https://github.com/plataformatec/devise/blob/master/lib/devise/models/validatable.rb
 
-  validates :first_name, :last_name, :access_token, :uid,
+  validates :first_name, :last_name, :access_token, :uid, :country_id,
     presence: true
 
   validates :email,

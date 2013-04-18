@@ -1,0 +1,1136 @@
+---
+- :name: Chad
+  :iso_name: CHAD
+  :alpha2: TD
+  :alpha3: TCD
+  :numcode: 148
+- :name: Faroe Islands
+  :iso_name: FAROE ISLANDS
+  :alpha2: FO
+  :alpha3: FRO
+  :numcode: 234
+- :name: India
+  :iso_name: INDIA
+  :alpha2: IN
+  :alpha3: IND
+  :numcode: 356
+- :name: Nicaragua
+  :iso_name: NICARAGUA
+  :alpha2: NI
+  :alpha3: NIC
+  :numcode: 558
+- :name: Saint Lucia
+  :iso_name: SAINT LUCIA
+  :alpha2: LC
+  :alpha3: LCA
+  :numcode: 662
+- :name: Fiji
+  :iso_name: FIJI
+  :alpha2: FJ
+  :alpha3: FJI
+  :numcode: 242
+- :name: Indonesia
+  :iso_name: INDONESIA
+  :alpha2: ID
+  :alpha3: IDN
+  :numcode: 360
+- :name: Niger
+  :iso_name: NIGER
+  :alpha2: NE
+  :alpha3: NER
+  :numcode: 562
+- :name: Saint Pierre and Miquelon
+  :iso_name: SAINT PIERRE AND MIQUELON
+  :alpha2: PM
+  :alpha3: SPM
+  :numcode: 666
+- :name: Finland
+  :iso_name: FINLAND
+  :alpha2: FI
+  :alpha3: FIN
+  :numcode: 246
+- :name: Nigeria
+  :iso_name: NIGERIA
+  :alpha2: NG
+  :alpha3: NGA
+  :numcode: 566
+- :name: Saint Vincent and the Grenadines
+  :iso_name: SAINT VINCENT AND THE GRENADINES
+  :alpha2: VC
+  :alpha3: VCT
+  :numcode: 670
+- :name: France
+  :iso_name: FRANCE
+  :alpha2: FR
+  :alpha3: FRA
+  :numcode: 250
+- :name: Iran, Islamic Republic of
+  :iso_name: IRAN, ISLAMIC REPUBLIC OF
+  :alpha2: IR
+  :alpha3: IRN
+  :numcode: 364
+- :name: Niue
+  :iso_name: NIUE
+  :alpha2: NU
+  :alpha3: NIU
+  :numcode: 570
+- :name: Samoa
+  :iso_name: SAMOA
+  :alpha2: WS
+  :alpha3: WSM
+  :numcode: 882
+- :name: French Guiana
+  :iso_name: FRENCH GUIANA
+  :alpha2: GF
+  :alpha3: GUF
+  :numcode: 254
+- :name: Iraq
+  :iso_name: IRAQ
+  :alpha2: IQ
+  :alpha3: IRQ
+  :numcode: 368
+- :name: San Marino
+  :iso_name: SAN MARINO
+  :alpha2: SM
+  :alpha3: SMR
+  :numcode: 674
+- :name: Ireland
+  :iso_name: IRELAND
+  :alpha2: IE
+  :alpha3: IRL
+  :numcode: 372
+- :name: Sao Tome and Principe
+  :iso_name: SAO TOME AND PRINCIPE
+  :alpha2: ST
+  :alpha3: STP
+  :numcode: 678
+- :name: Israel
+  :iso_name: ISRAEL
+  :alpha2: IL
+  :alpha3: ISR
+  :numcode: 376
+- :name: Saudi Arabia
+  :iso_name: SAUDI ARABIA
+  :alpha2: SA
+  :alpha3: SAU
+  :numcode: 682
+- :name: Italy
+  :iso_name: ITALY
+  :alpha2: IT
+  :alpha3: ITA
+  :numcode: 380
+- :name: Senegal
+  :iso_name: SENEGAL
+  :alpha2: SN
+  :alpha3: SEN
+  :numcode: 686
+- :name: Jamaica
+  :iso_name: JAMAICA
+  :alpha2: JM
+  :alpha3: JAM
+  :numcode: 388
+- :name: Japan
+  :iso_name: JAPAN
+  :alpha2: JP
+  :alpha3: JPN
+  :numcode: 392
+- :name: Jordan
+  :iso_name: JORDAN
+  :alpha2: JO
+  :alpha3: JOR
+  :numcode: 400
+- :name: Belgium
+  :iso_name: BELGIUM
+  :alpha2: BE
+  :alpha3: BEL
+  :numcode: 56
+- :name: Belize
+  :iso_name: BELIZE
+  :alpha2: BZ
+  :alpha3: BLZ
+  :numcode: 84
+- :name: Kazakhstan
+  :iso_name: KAZAKHSTAN
+  :alpha2: KZ
+  :alpha3: KAZ
+  :numcode: 398
+- :name: Uganda
+  :iso_name: UGANDA
+  :alpha2: UG
+  :alpha3: UGA
+  :numcode: 800
+- :name: Benin
+  :iso_name: BENIN
+  :alpha2: BJ
+  :alpha3: BEN
+  :numcode: 204
+- :name: Kenya
+  :iso_name: KENYA
+  :alpha2: KE
+  :alpha3: KEN
+  :numcode: 404
+- :name: Ukraine
+  :iso_name: UKRAINE
+  :alpha2: UA
+  :alpha3: UKR
+  :numcode: 804
+- :name: Bermuda
+  :iso_name: BERMUDA
+  :alpha2: BM
+  :alpha3: BMU
+  :numcode: 60
+- :name: Kiribati
+  :iso_name: KIRIBATI
+  :alpha2: KI
+  :alpha3: KIR
+  :numcode: 296
+- :name: Mexico
+  :iso_name: MEXICO
+  :alpha2: MX
+  :alpha3: MEX
+  :numcode: 484
+- :name: United Arab Emirates
+  :iso_name: UNITED ARAB EMIRATES
+  :alpha2: AE
+  :alpha3: ARE
+  :numcode: 784
+- :name: Bhutan
+  :iso_name: BHUTAN
+  :alpha2: BT
+  :alpha3: BTN
+  :numcode: 64
+- :name: Cuba
+  :iso_name: CUBA
+  :alpha2: CU
+  :alpha3: CUB
+  :numcode: 192
+- :name: North Korea
+  :iso_name: KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF
+  :alpha2: KP
+  :alpha3: PRK
+  :numcode: 408
+- :name: Micronesia, Federated States of
+  :iso_name: MICRONESIA, FEDERATED STATES OF
+  :alpha2: FM
+  :alpha3: FSM
+  :numcode: 583
+- :name: United Kingdom
+  :iso_name: UNITED KINGDOM
+  :alpha2: GB
+  :alpha3: GBR
+  :numcode: 826
+- :name: Bolivia
+  :iso_name: BOLIVIA
+  :alpha2: BO
+  :alpha3: BOL
+  :numcode: 68
+- :name: Cyprus
+  :iso_name: CYPRUS
+  :alpha2: CY
+  :alpha3: CYP
+  :numcode: 196
+- :name: South Korea
+  :iso_name: KOREA, REPUBLIC OF
+  :alpha2: KR
+  :alpha3: KOR
+  :numcode: 410
+- :name: Moldova, Republic of
+  :iso_name: MOLDOVA, REPUBLIC OF
+  :alpha2: MD
+  :alpha3: MDA
+  :numcode: 498
+- :name: United States
+  :iso_name: UNITED STATES
+  :alpha2: US
+  :alpha3: USA
+  :numcode: 840
+- :name: Bosnia and Herzegovina
+  :iso_name: BOSNIA AND HERZEGOVINA
+  :alpha2: BA
+  :alpha3: BIH
+  :numcode: 70
+- :name: Czech Republic
+  :iso_name: CZECH REPUBLIC
+  :alpha2: CZ
+  :alpha3: CZE
+  :numcode: 203
+- :name: Kuwait
+  :iso_name: KUWAIT
+  :alpha2: KW
+  :alpha3: KWT
+  :numcode: 414
+- :name: Monaco
+  :iso_name: MONACO
+  :alpha2: MC
+  :alpha3: MCO
+  :numcode: 492
+- :name: Uruguay
+  :iso_name: URUGUAY
+  :alpha2: UY
+  :alpha3: URY
+  :numcode: 858
+- :name: Botswana
+  :iso_name: BOTSWANA
+  :alpha2: BW
+  :alpha3: BWA
+  :numcode: 72
+- :name: Denmark
+  :iso_name: DENMARK
+  :alpha2: DK
+  :alpha3: DNK
+  :numcode: 208
+- :name: Guadeloupe
+  :iso_name: GUADELOUPE
+  :alpha2: GP
+  :alpha3: GLP
+  :numcode: 312
+- :name: Kyrgyzstan
+  :iso_name: KYRGYZSTAN
+  :alpha2: KG
+  :alpha3: KGZ
+  :numcode: 417
+- :name: Mongolia
+  :iso_name: MONGOLIA
+  :alpha2: MN
+  :alpha3: MNG
+  :numcode: 496
+- :name: Philippines
+  :iso_name: PHILIPPINES
+  :alpha2: PH
+  :alpha3: PHL
+  :numcode: 608
+- :name: Brazil
+  :iso_name: BRAZIL
+  :alpha2: BR
+  :alpha3: BRA
+  :numcode: 76
+- :name: Djibouti
+  :iso_name: DJIBOUTI
+  :alpha2: DJ
+  :alpha3: DJI
+  :numcode: 262
+- :name: Guam
+  :iso_name: GUAM
+  :alpha2: GU
+  :alpha3: GUM
+  :numcode: 316
+- :name: Lao People's Democratic Republic
+  :iso_name: LAO PEOPLE'S DEMOCRATIC REPUBLIC
+  :alpha2: LA
+  :alpha3: LAO
+  :numcode: 418
+- :name: Montserrat
+  :iso_name: MONTSERRAT
+  :alpha2: MS
+  :alpha3: MSR
+  :numcode: 500
+- :name: Pitcairn
+  :iso_name: PITCAIRN
+  :alpha2: PN
+  :alpha3: PCN
+  :numcode: 612
+- :name: Uzbekistan
+  :iso_name: UZBEKISTAN
+  :alpha2: UZ
+  :alpha3: UZB
+  :numcode: 860
+- :name: Brunei Darussalam
+  :iso_name: BRUNEI DARUSSALAM
+  :alpha2: BN
+  :alpha3: BRN
+  :numcode: 96
+- :name: Dominica
+  :iso_name: DOMINICA
+  :alpha2: DM
+  :alpha3: DMA
+  :numcode: 212
+- :name: Guatemala
+  :iso_name: GUATEMALA
+  :alpha2: GT
+  :alpha3: GTM
+  :numcode: 320
+- :name: Morocco
+  :iso_name: MOROCCO
+  :alpha2: MA
+  :alpha3: MAR
+  :numcode: 504
+- :name: Poland
+  :iso_name: POLAND
+  :alpha2: PL
+  :alpha3: POL
+  :numcode: 616
+- :name: Vanuatu
+  :iso_name: VANUATU
+  :alpha2: VU
+  :alpha3: VUT
+  :numcode: 548
+- :name: Dominican Republic
+  :iso_name: DOMINICAN REPUBLIC
+  :alpha2: DO
+  :alpha3: DOM
+  :numcode: 214
+- :name: Mozambique
+  :iso_name: MOZAMBIQUE
+  :alpha2: MZ
+  :alpha3: MOZ
+  :numcode: 508
+- :name: Portugal
+  :iso_name: PORTUGAL
+  :alpha2: PT
+  :alpha3: PRT
+  :numcode: 620
+- :name: Sudan
+  :iso_name: SUDAN
+  :alpha2: SD
+  :alpha3: SDN
+  :numcode: 736
+- :name: Venezuela
+  :iso_name: VENEZUELA
+  :alpha2: VE
+  :alpha3: VEN
+  :numcode: 862
+- :name: Ecuador
+  :iso_name: ECUADOR
+  :alpha2: EC
+  :alpha3: ECU
+  :numcode: 218
+- :name: Guinea
+  :iso_name: GUINEA
+  :alpha2: GN
+  :alpha3: GIN
+  :numcode: 324
+- :name: Myanmar
+  :iso_name: MYANMAR
+  :alpha2: MM
+  :alpha3: MMR
+  :numcode: 104
+- :name: Puerto Rico
+  :iso_name: PUERTO RICO
+  :alpha2: PR
+  :alpha3: PRI
+  :numcode: 630
+- :name: Suriname
+  :iso_name: SURINAME
+  :alpha2: SR
+  :alpha3: SUR
+  :numcode: 740
+- :name: Viet Nam
+  :iso_name: VIET NAM
+  :alpha2: VN
+  :alpha3: VNM
+  :numcode: 704
+- :name: Egypt
+  :iso_name: EGYPT
+  :alpha2: EG
+  :alpha3: EGY
+  :numcode: 818
+- :name: Guinea-Bissau
+  :iso_name: GUINEA-BISSAU
+  :alpha2: GW
+  :alpha3: GNB
+  :numcode: 624
+- :name: Namibia
+  :iso_name: NAMIBIA
+  :alpha2: NA
+  :alpha3: NAM
+  :numcode: 516
+- :name: Qatar
+  :iso_name: QATAR
+  :alpha2: QA
+  :alpha3: QAT
+  :numcode: 634
+- :name: Svalbard and Jan Mayen
+  :iso_name: SVALBARD AND JAN MAYEN
+  :alpha2: SJ
+  :alpha3: SJM
+  :numcode: 744
+- :name: El Salvador
+  :iso_name: EL SALVADOR
+  :alpha2: SV
+  :alpha3: SLV
+  :numcode: 222
+- :name: Guyana
+  :iso_name: GUYANA
+  :alpha2: GY
+  :alpha3: GUY
+  :numcode: 328
+- :name: Reunion
+  :iso_name: REUNION
+  :alpha2: RE
+  :alpha3: REU
+  :numcode: 638
+- :name: Haiti
+  :iso_name: HAITI
+  :alpha2: HT
+  :alpha3: HTI
+  :numcode: 332
+- :name: Romania
+  :iso_name: ROMANIA
+  :alpha2: RO
+  :alpha3: ROM
+  :numcode: 642
+- :name: Swaziland
+  :iso_name: SWAZILAND
+  :alpha2: SZ
+  :alpha3: SWZ
+  :numcode: 748
+- :name: Holy See (Vatican City State)
+  :iso_name: HOLY SEE (VATICAN CITY STATE)
+  :alpha2: VA
+  :alpha3: VAT
+  :numcode: 336
+- :name: Russian Federation
+  :iso_name: RUSSIAN FEDERATION
+  :alpha2: RU
+  :alpha3: RUS
+  :numcode: 643
+- :name: Sweden
+  :iso_name: SWEDEN
+  :alpha2: SE
+  :alpha3: SWE
+  :numcode: 752
+- :name: Honduras
+  :iso_name: HONDURAS
+  :alpha2: HN
+  :alpha3: HND
+  :numcode: 340
+- :name: Rwanda
+  :iso_name: RWANDA
+  :alpha2: RW
+  :alpha3: RWA
+  :numcode: 646
+- :name: Switzerland
+  :iso_name: SWITZERLAND
+  :alpha2: CH
+  :alpha3: CHE
+  :numcode: 756
+- :name: Hong Kong
+  :iso_name: HONG KONG
+  :alpha2: HK
+  :alpha3: HKG
+  :numcode: 344
+- :name: Syrian Arab Republic
+  :iso_name: SYRIAN ARAB REPUBLIC
+  :alpha2: SY
+  :alpha3: SYR
+  :numcode: 760
+- :name: Taiwan
+  :iso_name: TAIWAN, PROVINCE OF CHINA
+  :alpha2: TW
+  :alpha3: TWN
+  :numcode: 158
+- :name: Tajikistan
+  :iso_name: TAJIKISTAN
+  :alpha2: TJ
+  :alpha3: TJK
+  :numcode: 762
+- :name: Tanzania, United Republic of
+  :iso_name: TANZANIA, UNITED REPUBLIC OF
+  :alpha2: TZ
+  :alpha3: TZA
+  :numcode: 834
+- :name: Armenia
+  :iso_name: ARMENIA
+  :alpha2: AM
+  :alpha3: ARM
+  :numcode: 51
+- :name: Aruba
+  :iso_name: ARUBA
+  :alpha2: AW
+  :alpha3: ABW
+  :numcode: 533
+- :name: Australia
+  :iso_name: AUSTRALIA
+  :alpha2: AU
+  :alpha3: AUS
+  :numcode: 36
+- :name: Thailand
+  :iso_name: THAILAND
+  :alpha2: TH
+  :alpha3: THA
+  :numcode: 764
+- :name: Austria
+  :iso_name: AUSTRIA
+  :alpha2: AT
+  :alpha3: AUT
+  :numcode: 40
+- :name: Madagascar
+  :iso_name: MADAGASCAR
+  :alpha2: MG
+  :alpha3: MDG
+  :numcode: 450
+- :name: Togo
+  :iso_name: TOGO
+  :alpha2: TG
+  :alpha3: TGO
+  :numcode: 768
+- :name: Azerbaijan
+  :iso_name: AZERBAIJAN
+  :alpha2: AZ
+  :alpha3: AZE
+  :numcode: 31
+- :name: Chile
+  :iso_name: CHILE
+  :alpha2: CL
+  :alpha3: CHL
+  :numcode: 152
+- :name: Malawi
+  :iso_name: MALAWI
+  :alpha2: MW
+  :alpha3: MWI
+  :numcode: 454
+- :name: Tokelau
+  :iso_name: TOKELAU
+  :alpha2: TK
+  :alpha3: TKL
+  :numcode: 772
+- :name: Bahamas
+  :iso_name: BAHAMAS
+  :alpha2: BS
+  :alpha3: BHS
+  :numcode: 44
+- :name: China
+  :iso_name: CHINA
+  :alpha2: CN
+  :alpha3: CHN
+  :numcode: 156
+- :name: Malaysia
+  :iso_name: MALAYSIA
+  :alpha2: MY
+  :alpha3: MYS
+  :numcode: 458
+- :name: Tonga
+  :iso_name: TONGA
+  :alpha2: TO
+  :alpha3: TON
+  :numcode: 776
+- :name: Bahrain
+  :iso_name: BAHRAIN
+  :alpha2: BH
+  :alpha3: BHR
+  :numcode: 48
+- :name: Colombia
+  :iso_name: COLOMBIA
+  :alpha2: CO
+  :alpha3: COL
+  :numcode: 170
+- :name: Maldives
+  :iso_name: MALDIVES
+  :alpha2: MV
+  :alpha3: MDV
+  :numcode: 462
+- :name: Trinidad and Tobago
+  :iso_name: TRINIDAD AND TOBAGO
+  :alpha2: TT
+  :alpha3: TTO
+  :numcode: 780
+- :name: Bangladesh
+  :iso_name: BANGLADESH
+  :alpha2: BD
+  :alpha3: BGD
+  :numcode: 50
+- :name: Comoros
+  :iso_name: COMOROS
+  :alpha2: KM
+  :alpha3: COM
+  :numcode: 174
+- :name: French Polynesia
+  :iso_name: FRENCH POLYNESIA
+  :alpha2: PF
+  :alpha3: PYF
+  :numcode: 258
+- :name: Mali
+  :iso_name: MALI
+  :alpha2: ML
+  :alpha3: MLI
+  :numcode: 466
+- :name: Norfolk Island
+  :iso_name: NORFOLK ISLAND
+  :alpha2: NF
+  :alpha3: NFK
+  :numcode: 574
+- :name: Tunisia
+  :iso_name: TUNISIA
+  :alpha2: TN
+  :alpha3: TUN
+  :numcode: 788
+- :name: Barbados
+  :iso_name: BARBADOS
+  :alpha2: BB
+  :alpha3: BRB
+  :numcode: 52
+- :name: Congo
+  :iso_name: CONGO
+  :alpha2: CG
+  :alpha3: COG
+  :numcode: 178
+- :name: Gabon
+  :iso_name: GABON
+  :alpha2: GA
+  :alpha3: GAB
+  :numcode: 266
+- :name: Malta
+  :iso_name: MALTA
+  :alpha2: MT
+  :alpha3: MLT
+  :numcode: 470
+- :name: Northern Mariana Islands
+  :iso_name: NORTHERN MARIANA ISLANDS
+  :alpha2: MP
+  :alpha3: MNP
+  :numcode: 580
+- :name: Turkey
+  :iso_name: TURKEY
+  :alpha2: TR
+  :alpha3: TUR
+  :numcode: 792
+- :name: Congo, the Democratic Republic of the
+  :iso_name: CONGO, THE DEMOCRATIC REPUBLIC OF THE
+  :alpha2: CD
+  :alpha3: COD
+  :numcode: 180
+- :name: Marshall Islands
+  :iso_name: MARSHALL ISLANDS
+  :alpha2: MH
+  :alpha3: MHL
+  :numcode: 584
+- :name: Norway
+  :iso_name: NORWAY
+  :alpha2: 'NO'
+  :alpha3: NOR
+  :numcode: 578
+- :name: Turkmenistan
+  :iso_name: TURKMENISTAN
+  :alpha2: TM
+  :alpha3: TKM
+  :numcode: 795
+- :name: Belarus
+  :iso_name: BELARUS
+  :alpha2: BY
+  :alpha3: BLR
+  :numcode: 112
+- :name: Cook Islands
+  :iso_name: COOK ISLANDS
+  :alpha2: CK
+  :alpha3: COK
+  :numcode: 184
+- :name: Gambia
+  :iso_name: GAMBIA
+  :alpha2: GM
+  :alpha3: GMB
+  :numcode: 270
+- :name: Martinique
+  :iso_name: MARTINIQUE
+  :alpha2: MQ
+  :alpha3: MTQ
+  :numcode: 474
+- :name: Oman
+  :iso_name: OMAN
+  :alpha2: OM
+  :alpha3: OMN
+  :numcode: 512
+- :name: Seychelles
+  :iso_name: SEYCHELLES
+  :alpha2: SC
+  :alpha3: SYC
+  :numcode: 690
+- :name: Turks and Caicos Islands
+  :iso_name: TURKS AND CAICOS ISLANDS
+  :alpha2: TC
+  :alpha3: TCA
+  :numcode: 796
+- :name: Georgia
+  :iso_name: GEORGIA
+  :alpha2: GE
+  :alpha3: GEO
+  :numcode: 268
+- :name: Mauritania
+  :iso_name: MAURITANIA
+  :alpha2: MR
+  :alpha3: MRT
+  :numcode: 478
+- :name: Pakistan
+  :iso_name: PAKISTAN
+  :alpha2: PK
+  :alpha3: PAK
+  :numcode: 586
+- :name: Sierra Leone
+  :iso_name: SIERRA LEONE
+  :alpha2: SL
+  :alpha3: SLE
+  :numcode: 694
+- :name: Tuvalu
+  :iso_name: TUVALU
+  :alpha2: TV
+  :alpha3: TUV
+  :numcode: 798
+- :name: Costa Rica
+  :iso_name: COSTA RICA
+  :alpha2: CR
+  :alpha3: CRI
+  :numcode: 188
+- :name: Germany
+  :iso_name: GERMANY
+  :alpha2: DE
+  :alpha3: DEU
+  :numcode: 276
+- :name: Mauritius
+  :iso_name: MAURITIUS
+  :alpha2: MU
+  :alpha3: MUS
+  :numcode: 480
+- :name: Palau
+  :iso_name: PALAU
+  :alpha2: PW
+  :alpha3: PLW
+  :numcode: 585
+- :name: Cote D'Ivoire
+  :iso_name: COTE D'IVOIRE
+  :alpha2: CI
+  :alpha3: CIV
+  :numcode: 384
+- :name: Panama
+  :iso_name: PANAMA
+  :alpha2: PA
+  :alpha3: PAN
+  :numcode: 591
+- :name: Singapore
+  :iso_name: SINGAPORE
+  :alpha2: SG
+  :alpha3: SGP
+  :numcode: 702
+- :name: Croatia
+  :iso_name: CROATIA
+  :alpha2: HR
+  :alpha3: HRV
+  :numcode: 191
+- :name: Ghana
+  :iso_name: GHANA
+  :alpha2: GH
+  :alpha3: GHA
+  :numcode: 288
+- :name: Papua New Guinea
+  :iso_name: PAPUA NEW GUINEA
+  :alpha2: PG
+  :alpha3: PNG
+  :numcode: 598
+- :name: Slovakia
+  :iso_name: SLOVAKIA
+  :alpha2: SK
+  :alpha3: SVK
+  :numcode: 703
+- :name: Gibraltar
+  :iso_name: GIBRALTAR
+  :alpha2: GI
+  :alpha3: GIB
+  :numcode: 292
+- :name: Paraguay
+  :iso_name: PARAGUAY
+  :alpha2: PY
+  :alpha3: PRY
+  :numcode: 600
+- :name: Slovenia
+  :iso_name: SLOVENIA
+  :alpha2: SI
+  :alpha3: SVN
+  :numcode: 705
+- :name: Greece
+  :iso_name: GREECE
+  :alpha2: GR
+  :alpha3: GRC
+  :numcode: 300
+- :name: Peru
+  :iso_name: PERU
+  :alpha2: PE
+  :alpha3: PER
+  :numcode: 604
+- :name: Solomon Islands
+  :iso_name: SOLOMON ISLANDS
+  :alpha2: SB
+  :alpha3: SLB
+  :numcode: 90
+- :name: Greenland
+  :iso_name: GREENLAND
+  :alpha2: GL
+  :alpha3: GRL
+  :numcode: 304
+- :name: Somalia
+  :iso_name: SOMALIA
+  :alpha2: SO
+  :alpha3: SOM
+  :numcode: 706
+- :name: Grenada
+  :iso_name: GRENADA
+  :alpha2: GD
+  :alpha3: GRD
+  :numcode: 308
+- :name: South Africa
+  :iso_name: SOUTH AFRICA
+  :alpha2: ZA
+  :alpha3: ZAF
+  :numcode: 710
+- :name: Spain
+  :iso_name: SPAIN
+  :alpha2: ES
+  :alpha3: ESP
+  :numcode: 724
+- :name: Sri Lanka
+  :iso_name: SRI LANKA
+  :alpha2: LK
+  :alpha3: LKA
+  :numcode: 144
+- :name: Afghanistan
+  :iso_name: AFGHANISTAN
+  :alpha2: AF
+  :alpha3: AFG
+  :numcode: 4
+- :name: Albania
+  :iso_name: ALBANIA
+  :alpha2: AL
+  :alpha3: ALB
+  :numcode: 8
+- :name: Algeria
+  :iso_name: ALGERIA
+  :alpha2: DZ
+  :alpha3: DZA
+  :numcode: 12
+- :name: Latvia
+  :iso_name: LATVIA
+  :alpha2: LV
+  :alpha3: LVA
+  :numcode: 428
+- :name: American Samoa
+  :iso_name: AMERICAN SAMOA
+  :alpha2: AS
+  :alpha3: ASM
+  :numcode: 16
+- :name: Bulgaria
+  :iso_name: BULGARIA
+  :alpha2: BG
+  :alpha3: BGR
+  :numcode: 100
+- :name: Lebanon
+  :iso_name: LEBANON
+  :alpha2: LB
+  :alpha3: LBN
+  :numcode: 422
+- :name: Andorra
+  :iso_name: ANDORRA
+  :alpha2: AD
+  :alpha3: AND
+  :numcode: 20
+- :name: Burkina Faso
+  :iso_name: BURKINA FASO
+  :alpha2: BF
+  :alpha3: BFA
+  :numcode: 854
+- :name: Lesotho
+  :iso_name: LESOTHO
+  :alpha2: LS
+  :alpha3: LSO
+  :numcode: 426
+- :name: Angola
+  :iso_name: ANGOLA
+  :alpha2: AO
+  :alpha3: AGO
+  :numcode: 24
+- :name: Burundi
+  :iso_name: BURUNDI
+  :alpha2: BI
+  :alpha3: BDI
+  :numcode: 108
+- :name: Liberia
+  :iso_name: LIBERIA
+  :alpha2: LR
+  :alpha3: LBR
+  :numcode: 430
+- :name: Virgin Islands, British
+  :iso_name: VIRGIN ISLANDS, BRITISH
+  :alpha2: VG
+  :alpha3: VGB
+  :numcode: 92
+- :name: Anguilla
+  :iso_name: ANGUILLA
+  :alpha2: AI
+  :alpha3: AIA
+  :numcode: 660
+- :name: Cambodia
+  :iso_name: CAMBODIA
+  :alpha2: KH
+  :alpha3: KHM
+  :numcode: 116
+- :name: Equatorial Guinea
+  :iso_name: EQUATORIAL GUINEA
+  :alpha2: GQ
+  :alpha3: GNQ
+  :numcode: 226
+- :name: Libyan Arab Jamahiriya
+  :iso_name: LIBYAN ARAB JAMAHIRIYA
+  :alpha2: LY
+  :alpha3: LBY
+  :numcode: 434
+- :name: Nauru
+  :iso_name: NAURU
+  :alpha2: NR
+  :alpha3: NRU
+  :numcode: 520
+- :name: Virgin Islands, U.S.
+  :iso_name: VIRGIN ISLANDS, U.S.
+  :alpha2: VI
+  :alpha3: VIR
+  :numcode: 850
+- :name: Antigua and Barbuda
+  :iso_name: ANTIGUA AND BARBUDA
+  :alpha2: AG
+  :alpha3: ATG
+  :numcode: 28
+- :name: Cameroon
+  :iso_name: CAMEROON
+  :alpha2: CM
+  :alpha3: CMR
+  :numcode: 120
+- :name: Liechtenstein
+  :iso_name: LIECHTENSTEIN
+  :alpha2: LI
+  :alpha3: LIE
+  :numcode: 438
+- :name: Nepal
+  :iso_name: NEPAL
+  :alpha2: NP
+  :alpha3: NPL
+  :numcode: 524
+- :name: Wallis and Futuna
+  :iso_name: WALLIS AND FUTUNA
+  :alpha2: WF
+  :alpha3: WLF
+  :numcode: 876
+- :name: Western Sahara
+  :iso_name: WESTERN SAHARA
+  :alpha2: EH
+  :alpha3: ESH
+  :numcode: 732
+- :name: Argentina
+  :iso_name: ARGENTINA
+  :alpha2: AR
+  :alpha3: ARG
+  :numcode: 32
+- :name: Canada
+  :iso_name: CANADA
+  :alpha2: CA
+  :alpha3: CAN
+  :numcode: 124
+- :name: Eritrea
+  :iso_name: ERITREA
+  :alpha2: ER
+  :alpha3: ERI
+  :numcode: 232
+- :name: Lithuania
+  :iso_name: LITHUANIA
+  :alpha2: LT
+  :alpha3: LTU
+  :numcode: 440
+- :name: Netherlands
+  :iso_name: NETHERLANDS
+  :alpha2: NL
+  :alpha3: NLD
+  :numcode: 528
+- :name: Yemen
+  :iso_name: YEMEN
+  :alpha2: YE
+  :alpha3: YEM
+  :numcode: 887
+- :name: Cape Verde
+  :iso_name: CAPE VERDE
+  :alpha2: CV
+  :alpha3: CPV
+  :numcode: 132
+- :name: Estonia
+  :iso_name: ESTONIA
+  :alpha2: EE
+  :alpha3: EST
+  :numcode: 233
+- :name: Luxembourg
+  :iso_name: LUXEMBOURG
+  :alpha2: LU
+  :alpha3: LUX
+  :numcode: 442
+- :name: Netherlands Antilles
+  :iso_name: NETHERLANDS ANTILLES
+  :alpha2: AN
+  :alpha3: ANT
+  :numcode: 530
+- :name: Saint Helena
+  :iso_name: SAINT HELENA
+  :alpha2: SH
+  :alpha3: SHN
+  :numcode: 654
+- :name: Zambia
+  :iso_name: ZAMBIA
+  :alpha2: ZM
+  :alpha3: ZMB
+  :numcode: 894
+- :name: Cayman Islands
+  :iso_name: CAYMAN ISLANDS
+  :alpha2: KY
+  :alpha3: CYM
+  :numcode: 136
+- :name: Ethiopia
+  :iso_name: ETHIOPIA
+  :alpha2: ET
+  :alpha3: ETH
+  :numcode: 231
+- :name: Hungary
+  :iso_name: HUNGARY
+  :alpha2: HU
+  :alpha3: HUN
+  :numcode: 348
+- :name: Macao
+  :iso_name: MACAO
+  :alpha2: MO
+  :alpha3: MAC
+  :numcode: 446
+- :name: New Caledonia
+  :iso_name: NEW CALEDONIA
+  :alpha2: NC
+  :alpha3: NCL
+  :numcode: 540
+- :name: Zimbabwe
+  :iso_name: ZIMBABWE
+  :alpha2: ZW
+  :alpha3: ZWE
+  :numcode: 716
+- :name: Central African Republic
+  :iso_name: CENTRAL AFRICAN REPUBLIC
+  :alpha2: CF
+  :alpha3: CAF
+  :numcode: 140
+- :name: Falkland Islands (Malvinas)
+  :iso_name: FALKLAND ISLANDS (MALVINAS)
+  :alpha2: FK
+  :alpha3: FLK
+  :numcode: 238
+- :name: Iceland
+  :iso_name: ICELAND
+  :alpha2: IS
+  :alpha3: ISL
+  :numcode: 352
+- :name: Macedonia
+  :iso_name: MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
+  :alpha2: MK
+  :alpha3: MKD
+  :numcode: 807
+- :name: New Zealand
+  :iso_name: NEW ZEALAND
+  :alpha2: NZ
+  :alpha3: NZL
+  :numcode: 554
+- :name: Saint Kitts and Nevis
+  :iso_name: SAINT KITTS AND NEVIS
+  :alpha2: KN
+  :alpha3: KNA
+  :numcode: 659
+- :name: Serbia
+  :iso_name: SERBIA
+  :alpha2: RS
+  :alpha3: SRB
+  :numcode: 999

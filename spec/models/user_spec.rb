@@ -25,6 +25,10 @@ describe User do
       expect(User.new).to have(1).error_on(:email)
     end
 
+    it 'presence of #country_id' do
+      expect(User.new).to have(1).error_on(:country_id)
+    end
+
     it 'presence of #password' do
       expect(User.new).to have(1).error_on(:password)
     end
