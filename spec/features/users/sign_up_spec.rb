@@ -49,7 +49,7 @@ describe 'Sign Up' do
     visit new_user_registration_path
     click_button 'Sign up'
 
-    expect(page).to have_selector('#error_explanation', text: "Terms of service must be accepted")
+    expect(page).to have_selector('#error_explanation', text: "Please agree with terms of service to proceed")
   end
 
   it 'displays error when email is incorrectly formatted' do
