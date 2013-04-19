@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   # here. Please check devise source code for more information
   # https://github.com/plataformatec/devise/blob/master/lib/devise/models/validatable.rb
 
+  validates :terms_of_service,
+    acceptance: {
+      on: :create,
+      message: '^Please agree with terms of service to proceed'
+    }
+
   validates :first_name, :last_name, :access_token, :uid, :country_id,
     presence: true
 

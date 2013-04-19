@@ -33,6 +33,10 @@ describe User do
       expect(User.new).to have(1).error_on(:password)
     end
 
+    it 'acceptance of #terms_of_service' do
+      expect(User.new(terms_of_service: '')).to have(1).error_on(:terms_of_service)
+    end
+
     it 'format of #email' do
       expect(User.new(email: 'foo')).to have(1).error_on(:email)
     end
