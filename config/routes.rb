@@ -11,8 +11,12 @@ Launchpad::Application.routes.draw do
 
   root to: 'home#index'
 
-  get  '/oauth/auth'  => 'oauth/auth#auth'
-  post '/oauth/token' => 'oauth/token#create'
+  get  'oauth/auth'  => 'oauth/auth#auth'
+  post 'oauth/token' => 'oauth/token#create'
 
-  get  'oauth/user'   => 'oauth/user#user'
+  get  'oauth/user'  => 'oauth/user#user'
+
+  # Static pages
+  get 'terms' => 'content#terms'
+  get 'privacy_policy' => 'content#privacy_policy'
 end
