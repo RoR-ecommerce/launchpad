@@ -77,6 +77,12 @@ describe User do
       user.valid?
       expect(user.uid).to eq(uuid)
     end
+
+    it 'sends welcome email' do
+      expect {
+        FactoryGirl.create(:user)
+      }.to change { ActionMailer::Base.deliveries.size }.by(1)
+    end
   end
 
   describe 'on update' do
