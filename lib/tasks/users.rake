@@ -26,7 +26,7 @@ namespace :users do
       puts "Users total to migrate: #{FitUser.count}"
 
       FitUser.all.each do |user|
-        LaunchpadUser.create(
+        new_user = LaunchpadUser.create(
           first_name:           user.first_name,
           last_name:            user.last_name,
           email:                user.email,
@@ -35,6 +35,7 @@ namespace :users do
           old_crypted_password: user.crypted_password,
           old_password_salt:    user.password_salt
         )
+        user.update_attributes(uid: new_user.uid, provider: 'ufc')
         print "."
       end
 
