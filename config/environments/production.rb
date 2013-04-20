@@ -42,9 +42,9 @@ Launchpad::Application.configure do
 
   # Use a different cache store in production
   config.cache_store = :dalli_store,
-    ENV['MEMCACHIER_SERVERS'],
-    { username: ENV['MEMCACHIER_USERNAME'],
-      password: ENV['MEMCACHIER_PASSWORD'],
+    ENV['MEMCACHE_SERVERS'],
+    { username: ENV['MEMCACHE_USERNAME'],
+      password: ENV['MEMCACHE_PASSWORD'],
       failover: true,
       compress: true  }
 
