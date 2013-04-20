@@ -21,7 +21,7 @@ module Devise
           self.password             = password
           self.old_crypted_password = nil
           self.old_password_salt    = nil
-          self.save(validate: false)
+          self.save
         end
       end
     end
