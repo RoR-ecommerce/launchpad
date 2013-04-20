@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable
 
+  include Devise::PasswordMigration
+
   belongs_to :country
 
   has_many :authorization_codes, inverse_of: :user, dependent: :delete_all
