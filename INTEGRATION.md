@@ -153,6 +153,21 @@ Launchpad will respond with the following JSON response
 User information might contain more information as the system being developed.
 Please check back to this document for updates.
 
+Being consistent with Launchpad
+-------------------------------
+
+Launchpad manages every aspect of user sign-up and sign-out process, but every
+application implements its own session management which may lead to some
+inconsistencies.
+
+To address those inconsistencies we suggest a couple of things:
+
+* In case user session expired and user is trying to access protected resource
+  (for instance, by direct URL), automatically start sign-in / sign-up process
+  described above.
+* In case user explicitly signs out, as soon as it done on application side,
+  redirect user to Launchpad's sign out `https://launchpad.ufcfit.com`
+
 Errors
 ======
 

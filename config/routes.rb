@@ -7,7 +7,8 @@ Launchpad::Application.routes.draw do
     controllers: {
       registrations: 'users/registrations',
       passwords:     'users/passwords'
-    }
+    },
+    sign_out_via: [ :delete, :get ]
 
   root to: 'home#index'
 
