@@ -38,6 +38,8 @@ class User < ActiveRecord::Base
   before_validation :set_access_token, :set_uid,
     on: :create
 
+  after_create :send_welcome_message
+
   default_scope -> { where(deleted_at: nil) }
 
   class << self
@@ -75,6 +77,12 @@ class User < ActiveRecord::Base
 
   def set_uid
     self.uid = SecureRandom.uuid
+  end
+
+  # Sends welcome email using devise internals.
+  #
+  def send_welcome_message
+    send_devise_notification(:welcome_message)
   end
 
   # Checks whether a password is needed or not. For validations only.
