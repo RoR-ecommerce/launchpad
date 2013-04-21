@@ -27,8 +27,8 @@ namespace :users do
 
       FitUser.all.each do |user|
         new_user = LaunchpadUser.create(
-          first_name:           user.first_name,
-          last_name:            user.last_name,
+          first_name:           user.first_name.blank? ? user.email : user.first_name,
+          last_name:            user.last_name.blank? ? user.email : user.last_name ,
           email:                user.email,
           country:              Country.where(alpha3: 'USA').first,
           password:             SecureRandom.hex(10),
