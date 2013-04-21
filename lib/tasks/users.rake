@@ -25,7 +25,7 @@ namespace :users do
 
       puts "Users total to migrate: #{FitUser.count}"
 
-      FitUser.all.each do |user|
+      FitUser.find_each do |user|
         new_user = LaunchpadUser.create(
           first_name:           user.first_name.blank? ? user.email : user.first_name,
           last_name:            user.last_name.blank? ? user.email : user.last_name ,
