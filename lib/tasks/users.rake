@@ -35,6 +35,9 @@ namespace :users do
           old_crypted_password: user.crypted_password,
           old_password_salt:    user.password_salt
         )
+
+        puts "\nUser##{user.id} errors: #{new_user.errors.full_messages}\n" unless new_user.errors.blank?
+
         user.update_attributes(uid: new_user.uid, provider: 'ufc')
         print "."
       end
