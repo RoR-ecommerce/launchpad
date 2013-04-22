@@ -1,0 +1,4 @@
+web: bundle exec unicorn -E development -p $PORT -c ./config/unicorn.rb
+worker: bundle exec sidekiq -q mailer,1
+memcached: memcached -vv
+redis: redis-server /usr/local/etc/redis.conf

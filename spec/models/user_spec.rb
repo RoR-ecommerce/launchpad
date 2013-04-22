@@ -13,12 +13,28 @@ describe User do
   end
 
   describe 'validates' do
+    it 'presence of #first_name' do
+      expect(User.new).to have(1).error_on(:first_name)
+    end
+
+    it 'presence of #last_name' do
+      expect(User.new).to have(1).error_on(:last_name)
+    end
+
     it 'presence of #email' do
       expect(User.new).to have(1).error_on(:email)
     end
 
+    it 'presence of #country_id' do
+      expect(User.new).to have(1).error_on(:country_id)
+    end
+
     it 'presence of #password' do
       expect(User.new).to have(1).error_on(:password)
+    end
+
+    it 'acceptance of #terms_of_service' do
+      expect(User.new(terms_of_service: '')).to have(1).error_on(:terms_of_service)
     end
 
     it 'format of #email' do
@@ -61,6 +77,12 @@ describe User do
       user.valid?
       expect(user.uid).to eq(uuid)
     end
+
+    it 'sends welcome email' do
+      expect {
+        FactoryGirl.create(:user)
+      }.to change { ActionMailer::Base.deliveries.size }.by(1)
+    end
   end
 
   describe 'on update' do
@@ -86,15 +108,27 @@ describe User do
     expect(User.authorize_with_token(user.access_token).id).to eq(user.id)
   end
 
+  it 'makes full name out of first and last names' do
+    user = User.new(first_name: 'Moses', last_name: 'Song')
+    expect(user.full_name).to eq('Moses Song')
+  end
+
   it '#soft_destroy marks user as deleted' do
     user = FactoryGirl.create(:user)
     user.soft_destroy
     expect(user.deleted_at).not_to be_nil
   end
 
-  it '#as_json retuns limited set of attributes' do
-    user = FactoryGirl.create(:user)
-    expect(user.as_json.keys).to \
-      include('uid', 'email', 'created_at', 'updated_at')
+  describe '#as_json' do
+    it 'retuns limited set of attributes' do
+      user = FactoryGirl.build(:user)
+      expect(user.as_json.keys).to \
+        include('uid', 'email', 'first_name', 'last_name', 'created_at', 'updated_at')
+    end
+
+    it 'returns country along with attributes' do
+      user = FactoryGirl.build(:user)
+      expect(user.as_json[:country].keys).to include('alpha3')
+    end
   end
 end

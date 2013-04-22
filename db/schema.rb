@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130409033759) do
+ActiveRecord::Schema.define(:version => 20130420191200) do
 
   create_table "apps", :force => true do |t|
     t.string   "name",          :null => false
@@ -27,30 +27,45 @@ ActiveRecord::Schema.define(:version => 20130409033759) do
   add_index "apps", ["client_secret"], :name => "index_clients_on_client_secret", :unique => true
 
   create_table "authorization_codes", :force => true do |t|
+    t.integer  "user_id"
     t.string   "client_id"
     t.string   "client_secret"
+    t.string   "access_token",    :null => false
     t.string   "code"
-    t.integer  "user_id"
     t.datetime "code_expires_at"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "access_token",    :null => false
   end
 
   add_index "authorization_codes", ["client_id", "client_secret"], :name => "index_authorization_codes_on_client_id_and_client_secret"
   add_index "authorization_codes", ["code"], :name => "index_authorization_codes_on_code", :unique => true
 
+  create_table "countries", :force => true do |t|
+    t.string   "name",                    :null => false
+    t.string   "iso_name",                :null => false
+    t.string   "alpha2",     :limit => 2, :null => false
+    t.string   "alpha3",     :limit => 3, :null => false
+    t.integer  "numcode",                 :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.uuid     "uid",                    :null => false
+    t.string   "email",                  :null => false
+    t.string   "access_token",           :null => false
+    t.string   "encrypted_password",     :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "access_token",                           :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.datetime "deleted_at"
-    t.uuid     "uid",                                    :null => false
+    t.string   "first_name",             :null => false
+    t.string   "last_name",              :null => false
+    t.integer  "country_id",             :null => false
+    t.string   "old_crypted_password"
+    t.string   "old_password_salt"
   end
 
   add_index "users", ["access_token"], :name => "index_users_on_access_token", :unique => true

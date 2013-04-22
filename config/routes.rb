@@ -7,12 +7,21 @@ Launchpad::Application.routes.draw do
     controllers: {
       registrations: 'users/registrations',
       passwords:     'users/passwords'
-    }
+    },
+    sign_out_via: [ :delete, :get ]
 
   root to: 'home#index'
 
-  get  '/oauth/auth'  => 'oauth/auth#auth'
-  post '/oauth/token' => 'oauth/token#create'
+  get  'oauth/auth'  => 'oauth/auth#auth'
+  post 'oauth/token' => 'oauth/token#create'
 
-  get  'oauth/user'   => 'oauth/user#user'
+  get  'oauth/user'  => 'oauth/user#user'
+
+  # Static pages
+  get 'terms' => 'content#terms'
+  get 'privacy_policy' => 'content#privacy_policy'
+
+  # Sidekiq web interface. It is proctected with basic auth, see here
+  # `config/initializers/sidekiq.rb`.
+  mount Sidekiq::Web => '/sidekiq'
 end

@@ -7,6 +7,26 @@ describe 'Edit Account' do
     login_as user
   end
 
+  it 'updates first name' do
+    visit edit_user_registration_path
+    fill_in 'user_first_name',       with: 'Moses'
+    fill_in 'user_current_password', with: user.password
+    click_button 'Update'
+
+    visit edit_user_registration_path
+    expect(page).to have_field('user_first_name', with: 'Moses')
+  end
+
+  it 'updates last name' do
+    visit edit_user_registration_path
+    fill_in 'user_last_name',        with: 'Song'
+    fill_in 'user_current_password', with: user.password
+    click_button 'Update'
+
+    visit edit_user_registration_path
+    expect(page).to have_field('user_last_name', with: 'Song')
+  end
+
   it 'updates email' do
     visit edit_user_registration_path
     fill_in 'user_email',            with: 'foo@bar.baz'
@@ -15,6 +35,19 @@ describe 'Edit Account' do
 
     visit edit_user_registration_path
     expect(page).to have_field('user_email', with: 'foo@bar.baz')
+  end
+
+  it 'updates country' do
+    Rails.cache.clear
+    FactoryGirl.create(:country_ca)
+
+    visit edit_user_registration_path
+    select  'Canada',                from: 'user_country_id'
+    fill_in 'user_current_password', with: user.password
+    click_button 'Update'
+
+    visit edit_user_registration_path
+    expect(page).to have_select('user_country_id', selected: 'Canada')
   end
 
   it 'fails to update email when new one is invalid' do

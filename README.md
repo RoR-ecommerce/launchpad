@@ -33,6 +33,19 @@ necessary.
 gem 'rspec-rails', '~> 2.13.0'
 ```
 
+Foreman
+-------
+
+Processes are managed by Foreman gem. Copy `Procfile.dev.example` to
+`Procfile.dev` and edit for your needs. Make sure it is in your global gitignore
+so you won't commit this file into repository.
+
+You can Foerman with
+
+```shell
+foreman start -f Procfile.dev
+```
+
 Testing
 =======
 

@@ -2,7 +2,7 @@ Launchpad
 =========
 
 Launchpad is centralized user management system. It provides single point of
-access to user information for all UFC resources and single sing-on
+access to user information for all UFC resources and single sign-on
 functionality for users.
 
 Users act as resource owners with implicit grant of access to UFC resources.
@@ -139,13 +139,34 @@ Launchpad will respond with the following JSON response
 ```json
 {
   "uid": "a5ad3837-805b-497e-91bd-8737fa0e6bd2",
+  "first_name": "Moses",
+  "last_name": "Song",
   "email": "example@example.com",
   "created_at": "Wed, 03 Apr 2013 23:14:51 PDT -07:00",
-  "updated_at": "Wed, 03 Apr 2013 23:14:51 PDT -07:00"
+  "updated_at": "Wed, 03 Apr 2013 23:14:51 PDT -07:00",
+  "country": {
+    "alpha3": "USA"
+  }
 }
 ```
 
 User information might contain more information as the system being developed.
+Please check back to this document for updates.
+
+Being consistent with Launchpad
+-------------------------------
+
+Launchpad manages every aspect of user sign-up and sign-out process, but every
+application implements its own session management which may lead to some
+inconsistencies.
+
+To address those inconsistencies we suggest a couple of things:
+
+* In case user session expired and user is trying to access protected resource
+  (for instance, by direct URL), automatically start sign-in / sign-up process
+  described above.
+* In case user explicitly signs out, as soon as it done on application side,
+  redirect user to Launchpad's sign out `https://launchpad.ufcfit.com`
 
 Errors
 ======
