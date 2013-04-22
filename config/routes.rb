@@ -20,4 +20,8 @@ Launchpad::Application.routes.draw do
   # Static pages
   get 'terms' => 'content#terms'
   get 'privacy_policy' => 'content#privacy_policy'
+
+  # Sidekiq web interface. It is proctected with basic auth, see here
+  # `config/initializers/sidekiq.rb`.
+  mount Sidekiq::Web => '/sidekiq'
 end
