@@ -4,6 +4,11 @@ ruby   '2.0.0'
 gem 'unicorn',              '4.6.2'
 gem 'foreman',              '0.63.0'
 gem 'dalli',                '2.6.2'
+gem 'sidekiq',              '2.10.1'
+
+# Sidekiq web dependencies.
+gem 'slim',               '~> 1.3.8', require: false
+gem 'sinatra',            '~> 1.3.0', require: false
 
 # kgio gem is Unicorn dependecy, it also can speed up Memcached I/O operations,
 # it is defined here explicitly in order not to loose it incase Unicorn drop
@@ -19,6 +24,7 @@ gem 'pg',                   '0.15.1'
 gem 'postgres_ext',         '0.3.0' # won't be needed on Rails 4
 
 gem 'devise',               '2.2.3'
+gem 'devise-async',         '0.7.0'
 gem 'secure_headers',       '0.4.1' # might not be needed on Rails 4
 
 gem 'airbrake',             '3.1.11'
